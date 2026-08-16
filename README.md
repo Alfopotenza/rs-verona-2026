@@ -56,5 +56,3 @@ The two Head Organiser cards currently use initials. To add photographs:
 1. Copy each image into `assets/images/team/`.
 2. Replace the relevant `person-photo` block in `index.html` with an image.
 3. Add meaningful alternative text with the person’s name.
-# rs-verona-2026
-# rs-verona-2026
