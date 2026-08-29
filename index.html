@@ -3,24 +3,36 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Official participant hub for RS Verona 2026, a Regional Session of the European Youth Parliament.">
+  <meta name="description" content="Official website for RS Verona 2026, a Regional Session of the European Youth Parliament.">
   <meta name="theme-color" content="#b9361d">
   <title>RS Verona 2026</title>
-  <link rel="icon" href="./assets/images/rs-verona-logo.png">
+  <link rel="icon" href="./assets/images/rs-verona.svg">
+  <link rel="alternate" hreflang="it" href="./it/index.html">
+  <link rel="alternate" hreflang="en" href="./index.html">
   <link rel="stylesheet" href="./assets/styles.css">
   <script src="./assets/script.js" defer></script>
 </head>
 <body>
 <main>
   <header class="site-header">
-    <a class="brand" href="#top" aria-label="RS Verona 2026 home">
-      <img src="./assets/images/rs-verona-logo.png" alt="" width="42" height="42">
-      <span><strong>RS Verona</strong><small>2026</small></span>
-    </a>
+    <div class="brand-group">
+      <img class="eyp-mark" src="./assets/images/EYP_ITALY_SHORT.svg" alt="EYP Italy" height="38">
+      <span class="brand-divider" aria-hidden="true"></span>
+      <a class="brand" href="./index.html" aria-label="RS Verona 2026 home">
+        <img src="./assets/images/rs-verona.svg" alt="" width="42" height="42">
+        <span><strong>RS Verona</strong><small>2026</small></span>
+      </a>
+    </div>
     <nav class="main-nav" aria-label="Main navigation">
-      <a href="#schedule">Schedule</a><a href="#essentials">Essentials</a><a href="#materials">Materials</a><a href="#team">Team</a><a href="#contacts">Contacts</a>
+      <a class="active" href="./index.html">Home</a><a href="./rsverona.html">RS Verona</a><a href="./helpful-information.html">Helpful Info</a><a href="./me-in-eyp.html">Me in EYP</a><a href="./contacts.html">Contacts</a>
     </nav>
-    <a class="header-link" href="#materials">Participant hub</a>
+    <div class="header-actions">
+      <div class="lang-switch" aria-label="Language">
+        <span class="flag active" title="English"><svg viewBox="0 0 640 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path fill="#012169" d="M0 0h640v480H0z"/><path fill="#FFF" d="M75 0l244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-179L0 62V0z"/><path fill="#C8102E" d="M424 281l216 159v40L369 281h55zm-184 20l6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"/><path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z"/><path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"/></svg></span>
+        <a class="flag" href="./it/index.html" hreflang="it" lang="it" title="Italiano"><svg viewBox="0 0 3 2" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1" height="2" fill="#008C45"/><rect x="1" width="1" height="2" fill="#F4F5F0"/><rect x="2" width="1" height="2" fill="#CD212A"/></svg></a>
+      </div>
+      <a class="header-link stacked" href="./hub.html"><span>Event's Hub →</span><small>For participants</small></a>
+    </div>
   </header>
 
   <section class="hero" id="top">
@@ -28,18 +40,29 @@
       <p class="eyebrow">European Youth Parliament · Regional Session</p>
       <h1>Crafting<br><em>Unity</em></h1>
       <p class="motto">Weaving local traditions into Europe’s future.</p>
-      <p class="hero-intro">Four days of debate, teamwork and exchange in Verona, bringing together young people from Italy and across Europe.</p>
-      <div class="hero-actions"><a class="button primary" href="#schedule">View programme</a><a class="button secondary" href="#materials">Participant materials</a></div>
+      <p class="hero-intro"><a href="https://eyp.org">European Youth Parliament</a> is finally landing in Verona! Four days of debate, teamwork, and exchange in Verona, bringing together young people from Italy and across Europe.</p>
+      <div class="hero-actions"><a class="button primary" href="./hub.html">Event's Hub</a><a class="button secondary" href="./rsverona.html">About the session</a></div>
     </div>
     <div class="hero-identity">
       <div class="hero-date"><strong>22–25</strong><span>October 2026</span></div>
-      <img src="./assets/images/rs-verona-logo.png" alt="RS Verona 2026 visual identity" width="328" height="336">
+      <img src="./assets/images/rs-verona.svg" alt="RS Verona 2026 visual identity" width="328" height="328">
       <p>Parlamento Europeo Giovani — APS</p>
     </div>
   </section>
 
   <section class="countdown" data-countdown data-target="2026-10-22T00:00:00+02:00" aria-label="Countdown to RS Verona 2026" aria-live="polite">
-    <div class="countdown-heading"><span>22 October 2026</span><strong data-countdown-message>Until we meet in Verona</strong></div>
+    <div class="countdown-heading">
+      <span>22 October 2026</span>
+      <strong data-countdown-message>Until we meet in Verona</strong>
+      <details class="add-to-calendar">
+        <summary>Add to calendar →</summary>
+        <div class="add-to-calendar-menu">
+          <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=RS%20Verona%202026&amp;dates=20261022/20261026&amp;details=European%20Youth%20Parliament%20%E2%80%93%20Regional%20Session.%20Debate%2C%20teamwork%20and%20exchange%20in%20Verona.&amp;location=Verona%2C%20Italy" target="_blank" rel="noopener">Google Calendar</a>
+          <a href="https://outlook.live.com/calendar/0/action/compose?rru=addevent&amp;startdt=2026-10-22&amp;enddt=2026-10-26&amp;allday=true&amp;subject=RS%20Verona%202026&amp;body=European%20Youth%20Parliament%20%E2%80%93%20Regional%20Session.%20Debate%2C%20teamwork%20and%20exchange%20in%20Verona.&amp;location=Verona%2C%20Italy" target="_blank" rel="noopener">Outlook</a>
+          <a href="./assets/rs-verona-2026.ics" download>Apple / other (.ics)</a>
+        </div>
+      </details>
+    </div>
     <div class="countdown-values">
       <div><strong data-countdown-days>--</strong><span>Days</span></div>
       <div><strong data-countdown-hours>--</strong><span>Hours</span></div>
@@ -50,100 +73,48 @@
 
   <section class="facts" aria-label="Session facts">
     <div><span>01</span><strong>4 days</strong><small>22–25 October</small></div>
-    <div><span>02</span><strong>80+ participants</strong><small>From Italy and Europe</small></div>
+    <div><span>02</span><strong>100+ participants</strong><small>From Italy and Europe</small></div>
     <div><span>03</span><strong>3 phases</strong><small>TB · CW · GA</small></div>
     <div><span>04</span><strong>English</strong><small>Working language</small></div>
   </section>
 
-  <section class="section essentials-section" id="essentials">
+  <section class="section essentials-section" id="essentials" data-audience>
     <div class="section-intro">
-      <p class="kicker">Participant essentials</p><h2>The information you will need during the session.</h2>
-      <p>This hub will be updated as venues, menus and practical arrangements are confirmed.</p>
+      <p class="kicker">Find what you need</p><h2>Are you here as a visitor or a participant?</h2>
+      <p>Pick the option that fits you best — we'll show the information that matters most to you.</p>
     </div>
-    <div class="essential-grid">
-      <article class="essential-card featured"><span>Up next</span><h3>Team Building</h3><p>Friday, 23 October · 10:30</p><small>Venue to be confirmed</small><a href="#schedule">Full schedule →</a></article>
-      <article class="essential-card"><span>Food & venues</span><h3>Daily information</h3><p>Menus, dietary notes, addresses and transfer details will be added here.</p><a href="#food">View details →</a></article>
-      <article class="essential-card"><span>Need help?</span><h3>Key contacts</h3><p>Find the Event Safe Persons, the National Committee and the session mailbox.</p><a href="#contacts">View contacts →</a></article>
+    <div class="audience-tabs" role="tablist" aria-label="Choose your audience">
+      <button class="active" type="button" role="tab" aria-selected="true" aria-controls="audience-visitor" data-tab="0">Are you a visitor?</button>
+      <button type="button" role="tab" aria-selected="false" aria-controls="audience-participant" data-tab="1">Are you a participant?</button>
     </div>
-  </section>
-
-  <section class="schedule-section" id="schedule" data-schedule>
-    <div class="schedule-heading"><div><p class="kicker light">Programme</p><h2>Session schedule</h2></div><p>Times may be adjusted during the event. Check this page for the latest version.</p></div>
-    <div class="day-tabs" role="tablist" aria-label="Choose event day">
-      <button type="button" role="tab" aria-selected="false" aria-controls="day-0" data-tab="0"><span>Day 0</span><small>22 Oct</small></button>
-      <button class="active" type="button" role="tab" aria-selected="true" aria-controls="day-1" data-tab="1"><span>Day 1</span><small>23 Oct</small></button>
-      <button type="button" role="tab" aria-selected="false" aria-controls="day-2" data-tab="2"><span>Day 2</span><small>24 Oct</small></button>
-      <button type="button" role="tab" aria-selected="false" aria-controls="day-3" data-tab="3"><span>Day 3</span><small>25 Oct</small></button>
+    <div class="essential-grid cols-4" id="audience-visitor" role="tabpanel" data-panel="0">
+      <article class="essential-card"><span>The session</span><h3>What is RS Verona 2026?</h3><p>Our vision, goals and the organising team behind the session.</p><a href="./rsverona.html">Find out more →</a></article>
+      <article class="essential-card"><span>The organisation</span><h3>About EYP</h3><p>RS Verona 2026 is a Regional Session of the European Youth Parliament, organised by EYP Italy.</p><a href="https://eypitaly.org" target="_blank" rel="noreferrer">Visit eypitaly.org ↗</a></article>
+      <article class="essential-card"><span>Supporters</span><h3>Our partners</h3><p>Meet the organisations making RS Verona 2026 possible.</p><a href="./rsverona.html#partners">Discover our partners →</a></article>
+      <article class="essential-card"><span>Get in touch</span><h3>Ask us anything</h3><p>Press, sponsorship or general questions — our staff is happy to help.</p><a href="./contacts.html">Contact us →</a></article>
     </div>
-
-    <div class="schedule-panel" id="day-0" role="tabpanel" data-panel="0" hidden>
-      <div class="schedule-day-title"><p>22 Oct 2026</p><h3>Officials’ Training</h3></div>
-      <ol class="timeline"><li><time>13:00</time><strong>Officials’ arrivals & registration</strong><span>Venue to be confirmed</span></li><li><time>14:30</time><strong>General Team Building</strong><span>Venue to be confirmed</span></li><li><time>15:00</time><strong>Officials’ Training</strong><span>Venue to be confirmed</span></li><li><time>20:00</time><strong>Dinner</strong><span>Venue to be confirmed</span></li></ol>
-    </div>
-    <div class="schedule-panel" id="day-1" role="tabpanel" data-panel="1">
-      <div class="schedule-day-title"><p>23 Oct 2026</p><h3>Team Building</h3></div>
-      <ol class="timeline"><li><time>09:00</time><strong>Delegates’ arrivals & registration</strong><span>Venue to be confirmed</span></li><li><time>10:30</time><strong>General Team Building</strong><span>Venue to be confirmed</span></li><li><time>11:00</time><strong>Team Building</strong><span>Venue to be confirmed</span></li><li><time>13:00</time><strong>Lunch</strong><span>Venue to be confirmed</span></li><li><time>14:00</time><strong>Team Building</strong><span>Venue to be confirmed</span></li><li><time>18:30</time><strong>Opening Ceremony</strong><span>Venue to be confirmed</span></li><li><time>20:30</time><strong>Dinner</strong><span>Venue to be confirmed</span></li></ol>
-    </div>
-    <div class="schedule-panel" id="day-2" role="tabpanel" data-panel="2" hidden>
-      <div class="schedule-day-title"><p>24 Oct 2026</p><h3>Committee Work</h3></div>
-      <ol class="timeline"><li><time>07:30</time><strong>Breakfast</strong><span>Venue to be confirmed</span></li><li><time>09:00</time><strong>Committee Work</strong><span>Venue to be confirmed</span></li><li><time>13:00</time><strong>Lunch</strong><span>Venue to be confirmed</span></li><li><time>14:00</time><strong>Committee Work</strong><span>Venue to be confirmed</span></li><li><time>19:30</time><strong>Dinner</strong><span>Venue to be confirmed</span></li><li><time>21:00</time><strong>Evening activity</strong><span>Venue to be confirmed</span></li></ol>
-    </div>
-    <div class="schedule-panel" id="day-3" role="tabpanel" data-panel="3" hidden>
-      <div class="schedule-day-title"><p>25 Oct 2026</p><h3>General Assembly</h3></div>
-      <ol class="timeline"><li><time>07:30</time><strong>Breakfast & transfer</strong><span>Venue to be confirmed</span></li><li><time>09:30</time><strong>General Assembly</strong><span>Venue to be confirmed</span></li><li><time>13:10</time><strong>Lunch</strong><span>Venue to be confirmed</span></li><li><time>14:10</time><strong>General Assembly</strong><span>Venue to be confirmed</span></li><li><time>18:00</time><strong>Closing Ceremony</strong><span>Venue to be confirmed</span></li><li><time>19:00</time><strong>Departures</strong><span>Venue to be confirmed</span></li></ol>
+    <div class="essential-grid cols-4" id="audience-participant" role="tabpanel" data-panel="1" hidden>
+      <article class="essential-card"><span>Up next</span><h3>Team Building</h3><p>Friday, 23 October · 10:30</p><small>Venue to be confirmed</small><a href="./hub.html#schedule">Full schedule →</a></article>
+      <article class="essential-card"><span>Food & venues</span><h3>Daily information</h3><p>Menus, dietary notes, addresses and transfer details are gathered in the Event's Hub.</p><a href="./hub.html#practical">View details →</a></article>
+      <article class="essential-card"><span>Documents</span><h3>Key materials</h3><p>Session documents, forms and resolutions gathered in one place.</p><a href="./hub.html#materials">View materials →</a></article>
+      <article class="essential-card"><span>Need help?</span><h3>Team contacts</h3><p>Find the Event Safe Persons, the National Committee and the session mailbox.</p><a href="./hub.html#contacts">View contacts →</a></article>
     </div>
   </section>
 
-  <section class="section practical-section" id="food">
-    <div class="section-intro compact"><p class="kicker">Food & venues</p><h2>Practical information</h2></div>
-    <div class="practical-grid">
-      <article><span>Meals</span><h3>Lunch & dinner</h3><p>Menus and allergen information will be published once confirmed. Please communicate dietary requirements through the official form.</p></article>
-      <article><span>Venues</span><h3>Addresses & transfers</h3><p>Venue addresses, maps and transfer instructions will be added to the Welcome Booklet and this page.</p></article>
-      <article><span>Accommodation</span><h3>Stay information</h3><p>Check-in times, room arrangements and house rules will be shared with participants before arrival.</p></article>
-    </div>
-  </section>
-
-  <section class="materials-section" id="materials">
-    <div class="section-intro materials-intro"><p class="kicker">Participant library</p><h2>Session materials</h2><p>Booklets and academic resources will be available here as soon as they are published.</p></div>
-    <div class="material-list">
-      <div class="material-row"><span class="material-number">01</span><span class="material-type">TRAVEL</span><strong>Travel booklet</strong><span class="material-status">Coming soon</span></div>
-      <div class="material-row"><span class="material-number">02</span><span class="material-type">WELCOME</span><strong>Welcome booklet</strong><span class="material-status">Coming soon</span></div>
-      <div class="material-row"><span class="material-number">03</span><span class="material-type">ACADEMIC</span><strong>Topic overviews</strong><span class="material-status">Coming soon</span></div>
-      <div class="material-row"><span class="material-number">04</span><span class="material-type">GA</span><strong>Resolution booklet</strong><span class="material-status">Coming soon</span></div>
-    </div>
-  </section>
-
-  <section class="section team-section" id="team">
-    <div class="section-intro team-intro"><p class="kicker">Who we are</p><h2>Meet the team</h2><p>The organising team works with EYP Italy to prepare the session and support participants throughout the event.</p></div>
-    <div class="organiser-grid">
-      <article class="person-card"><div class="person-photo" aria-label="Photo placeholder for Mattia D’Angelo">MD</div><div><span>Head Organiser</span><h3>Mattia D’Angelo</h3><p>Sapienza University · Physics</p></div></article>
-      <article class="person-card"><div class="person-photo" aria-label="Photo placeholder for Matteo Rigo">MR</div><div><span>Head Organiser</span><h3>Matteo Rigo</h3><p>Liceo Grigoletti</p></div></article>
-    </div>
-    <div class="coordination-card">
-      <div><span>EYP Italy</span><h3>Coordination</h3></div>
-      <ul><li><strong>Federico Pisani</strong><span>President</span></li><li><strong>Matthieu Chiagano</strong><span>Vice-President</span></li><li><strong>Giulia Bardelli</strong><span>Treasurer</span></li><li><strong>Sofia Campailla</strong><span>Board Member · Events</span></li><li><strong>Bianca Brighenti</strong><span>Events Portfolio Assistant</span></li></ul>
-    </div>
-  </section>
-
-  <section class="about-section" id="about">
-    <div><p class="kicker light">After Verona</p><h2>Continue your EYP journey</h2><p>EYP Italy organises regional, national and international events throughout the year. Delegates can continue as participants, volunteers and officials.</p><a class="button on-dark" href="https://eypitaly.org" target="_blank" rel="noreferrer">Visit EYP Italy ↗</a></div>
-    <aside><strong>90%</strong><p>of participants said they would like to attend another EYP event.</p><small>Event feedback · 2024</small></aside>
-  </section>
-
-  <section class="section city-section">
-    <div class="section-intro compact"><p class="kicker">The host city</p><h2>Verona</h2><p>A city shaped by history, craftsmanship and exchange—an ideal setting for a session about local traditions and Europe’s future.</p></div>
-    <div class="city-grid"><article><span>Image placeholder</span><h3>Essential places</h3><p>Useful landmarks and meeting points.</p></article><article><span>Image placeholder</span><h3>Local traditions</h3><p>Food, craft and stories from Verona.</p></article><article><span>Image placeholder</span><h3>Good to know</h3><p>Transport, safety and practical tips.</p></article></div>
-  </section>
-
-  <section class="section contacts-section" id="contacts">
-    <div class="section-intro compact"><p class="kicker">Contacts</p><h2>We are here to help</h2></div>
-    <div class="contact-list"><a href="mailto:rsverona2026@eypitaly.org"><span>Session mailbox</span><strong>rsverona2026@eypitaly.org</strong></a><a href="mailto:lorem@eypitaly.org"><span>Event Safe Person</span><strong>Name to be confirmed</strong></a><a href="mailto:lorem@eypitaly.org"><span>National Committee</span><strong>Name to be confirmed</strong></a></div>
+  <section class="hub-cta">
+    <p class="kicker light">Event's Hub</p>
+    <h2>Schedule, venues, menus, materials and participant contacts — all in one place.</h2>
+    <p>The Event's Hub is the working page for delegates and staff during the session. It's kept up to date until the last day of RS Verona 2026.</p>
+    <a class="button on-dark" href="./hub.html">Open the Event's Hub →</a>
   </section>
 
   <footer>
-    <div class="footer-brand"><img src="./assets/images/rs-verona-logo.png" alt="" width="48" height="48"><strong>RS Verona 2026</strong></div>
-    <p>Crafting Unity: Weaving Local Traditions into Europe’s Future.</p>
+    <div class="footer-brand"><img class="eyp-mark" src="./assets/images/EYP_ITALY_SHORT.svg" alt="EYP Italy" height="32"><span class="brand-divider" aria-hidden="true"></span><img src="./assets/images/rs-verona.svg" alt="" width="48" height="48"><strong>RS Verona 2026</strong></div>
+    <p>“Crafting Unity: Weaving Local Traditions into Europe’s Future.”</p>
     <div class="footer-links"><a href="https://eypitaly.org" target="_blank" rel="noreferrer">EYP Italy</a><a href="https://www.instagram.com/eypitaly/" target="_blank" rel="noreferrer">Instagram</a><a href="#top">Back to top ↑</a></div>
+    <nav class="footer-sitemap" aria-label="Site map">
+      <a href="./index.html">Home</a><a href="./rsverona.html">RS Verona</a><a href="./helpful-information.html">Helpful Info</a><a href="./me-in-eyp.html">Me in EYP</a><a href="./contacts.html">Contacts</a><a href="./hub.html">Event's Hub</a>
+    </nav>
     <small>© 2026 Parlamento Europeo Giovani — APS</small>
   </footer>
 </main>

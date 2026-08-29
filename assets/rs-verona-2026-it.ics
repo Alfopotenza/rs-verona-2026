@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//RS Verona 2026//IT
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rs-verona-2026@eypitaly.org
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20261022
+DTEND;VALUE=DATE:20261026
+SUMMARY:RS Verona 2026
+DESCRIPTION:European Youth Parliament – Regional Session. Quattro giorni di dibattito\, lavoro di squadra e scambio a Verona\, con giovani provenienti dall'Italia e da tutta Europa.
+LOCATION:Verona\, Italia
+END:VEVENT
+END:VCALENDAR
