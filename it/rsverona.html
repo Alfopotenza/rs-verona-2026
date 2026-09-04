@@ -40,71 +40,216 @@
     <div class="page-intro-nav">
       <a class="button on-dark" href="#why-verona">Perché Verona?</a>
       <a class="button on-dark" href="#vision-goals">Visione e obiettivi</a>
-      <a class="button on-dark" href="#team">Il team</a>
+      <a class="button on-dark" href="#officials">I nostri officials</a>
       <a class="button on-dark" href="#partners">Partner</a>
       <a class="button on-dark" href="#numbers">In numeri</a>
     </div>
   </section>
 
   <section class="section city-section" id="why-verona">
-    <div class="section-intro compact"><p class="kicker">La città ospitante</p><h2>Perché Verona?</h2><p>Una città plasmata da storia, artigianato e scambio — l'ambientazione ideale per una sessione dedicata a intrecciare le tradizioni locali nel futuro dell'Europa. Verona è da secoli un crocevia della cultura europea, ed è proprio questo spirito d'incontro che vogliamo far vivere ai partecipanti di RS Verona 2026.</p></div>
+    <div class="section-intro compact"><p class="kicker">La città ospitante</p><h2>Perché Verona?</h2><p class="section-lead">Per la prima volta nella storia del PEG, una Sessione Regionale arriva a Verona: una città plasmata da storia, artigianato e scambio, il palcoscenico ideale per intrecciare le tradizioni locali nel futuro dell'Europa.</p></div>
+    <p class="section-copy">Il motto della sessione, "Crafting Unity: Weaving Local Traditions into Europe's Future", si accorda perfettamente a Verona: un evento che valorizza il territorio preservando allo stesso tempo la matrice europea e il respiro internazionale di ogni sessione EYP. Vogliamo far conoscere e condividere culture e tradizioni diverse, nella speranza che case, paesi e usanze possano intrecciarsi in una tela di memorie e speranze sul futuro.</p>
+    <p class="section-copy">La sessione informa e sensibilizza sulla dimensione europea della cittadinanza, stimola il dibattito sui temi cruciali della democrazia europea e migliora le capacità di comunicazione in inglese. A livello territoriale, è l'occasione per consolidare i rapporti con Verona e le sue istituzioni — un luogo d'incontro aperto a tutti, dove le tradizioni vengono riscoperte in chiave europea e pluralista.</p>
     <div class="city-grid">
-      <article><span>Segnaposto immagine</span><h3>Luoghi essenziali</h3><details><summary>Punti di riferimento e ritrovo utili.</summary><p>Piazza Bra e l'Arena, Ponte Pietra e il lungo Adige, Piazza delle Erbe e Castelvecchio sono tutti raggiungibili a piedi dalla sede.</p></details></article>
-      <article><span>Segnaposto immagine</span><h3>Tradizioni locali</h3><details><summary>Cibo, artigianato e storie di Verona.</summary><p>Da provare il risotto all'Amarone e il pandoro delle pasticcerie locali, senza dimenticare le antiche tradizioni cittadine della lavorazione del marmo e della stampa.</p></details></article>
-      <article><span>Segnaposto immagine</span><h3>Da sapere</h3><details><summary>Trasporti, sicurezza e consigli pratici.</summary><p>Gli autobus dalla stazione sono frequenti, gli Event Safe Persons sono raggiungibili per tutta la sessione ed è consigliato indossare scarpe comode per i sanpietrini del centro storico.</p></details></article>
+      <button class="city-card" type="button" data-modal-open="modal-essential-places">
+        <img src="../assets/images/20220527153812-arena-di-verona-veneto-gettyimages-539331510.webp" alt="">
+        <span class="city-card-body"><span class="eyebrow">Luoghi essenziali</span><h3>Dove andare</h3><p>Punti di riferimento e ritrovo utili, tutti raggiungibili a piedi.</p><span class="city-card-cta">Scopri di più →</span></span>
+      </button>
+      <button class="city-card" type="button" data-modal-open="modal-local-traditions">
+        <img src="../assets/images/images-29.jpeg" alt="">
+        <span class="city-card-body"><span class="eyebrow">Tradizioni locali</span><h3>Cosa provare</h3><p>Cibo, artigianato e storie di Verona.</p><span class="city-card-cta">Scopri di più →</span></span>
+      </button>
+      <button class="city-card" type="button" data-modal-open="modal-good-to-know">
+        <img src="../assets/images/stazione.jpeg" alt="">
+        <span class="city-card-body"><span class="eyebrow">Da sapere</span><h3>Consigli pratici</h3><p>Trasporti, sicurezza e consigli utili per la sessione.</p><span class="city-card-cta">Scopri di più →</span></span>
+      </button>
     </div>
+
+    <dialog id="modal-essential-places" class="brochure">
+      <button class="brochure-close" type="button" data-modal-close aria-label="Chiudi">✕</button>
+      <img class="brochure-image" src="../assets/images/20220527153812-arena-di-verona-veneto-gettyimages-539331510.webp" alt="">
+      <div class="brochure-body">
+        <p class="eyebrow">Luoghi essenziali</p>
+        <h3>Dove andare</h3>
+        <p>Piazza Bra e l'Arena, Ponte Pietra e il lungo Adige, Piazza delle Erbe e Castelvecchio sono tutti raggiungibili a piedi dalla sede. Il centro storico di Verona si esplora comodamente senza bisogno di mezzi, tra vicoli medievali e scorci sull'Adige.</p>
+      </div>
+    </dialog>
+    <dialog id="modal-local-traditions" class="brochure">
+      <button class="brochure-close" type="button" data-modal-close aria-label="Chiudi">✕</button>
+      <img class="brochure-image" src="../assets/images/images-29.jpeg" alt="">
+      <div class="brochure-body">
+        <p class="eyebrow">Tradizioni locali</p>
+        <h3>Cosa provare</h3>
+        <p>Da provare il risotto all'Amarone e il pandoro delle pasticcerie locali, dolce simbolo delle feste veronesi. Verona custodisce inoltre antiche tradizioni artigiane, dalla lavorazione del marmo alla stampa, che ancora oggi si intrecciano con la vita quotidiana della città.</p>
+      </div>
+    </dialog>
+    <dialog id="modal-good-to-know" class="brochure">
+      <button class="brochure-close" type="button" data-modal-close aria-label="Chiudi">✕</button>
+      <img class="brochure-image" src="../assets/images/stazione.jpeg" alt="">
+      <div class="brochure-body">
+        <p class="eyebrow">Da sapere</p>
+        <h3>Consigli pratici</h3>
+        <p>Gli autobus dalla stazione di Verona Porta Nuova sono frequenti e collegano rapidamente il centro storico. Gli Event Safe Persons sono raggiungibili per tutta la durata della sessione, ed è consigliato indossare scarpe comode per i sanpietrini del centro storico.</p>
+      </div>
+    </dialog>
   </section>
 
   <section class="section" id="vision-goals">
     <div class="section-intro">
       <p class="kicker">Perché lo facciamo</p><h2>Vision & obiettivi</h2>
-      <p>RS Verona 2026 segue il format dello European Youth Parliament: tre fasi pensate per costruire fiducia, affinare il pensiero critico e trasformare il dibattito in risoluzioni condivise.</p>
+      <p>RS Verona 2026 persegue un triplice obiettivo: coltivare la cittadinanza attiva, sostenere la crescita personale e costruire l'abitudine al dialogo e al confronto democratico.</p>
     </div>
     <div class="practical-grid">
-      <article><span>Team Building</span><h3>Costruire fiducia</h3><p>I delegati formano le loro commissioni e imparano a lavorare in squadra attraverso attività non formali, prima ancora che inizi un solo dibattito politico.</p></article>
-      <article><span>Committee Work</span><h3>Pensare in modo critico</h3><p>Le commissioni ricercano, dibattono e redigono risoluzioni su sfide europee reali, guidate dai propri chairperson.</p></article>
-      <article><span>General Assembly</span><h3>Decidere insieme</h3><p>Tutti i delegati discutono e votano le risoluzioni in seduta plenaria, esercitando public speaking e procedura parlamentare.</p></article>
+      <article><span>Obiettivo 01</span><h3>Cittadinanza attiva</h3><p>Attraverso le attività del Parlamento Europeo Giovani vogliamo stimolare i ragazzi a prendersi cura della cosa pubblica: accorgersi delle sfide che ci circondano, osservare come le istituzioni si muovono per affrontarle e iniziare a ragionare sui problemi in modo attivo.</p></article>
+      <article><span>Obiettivo 02</span><h3>Crescita personale</h3><p>Le nostre simulazioni danno a centinaia di ragazzi l'occasione di sperimentare teamwork e public speaking, mettendosi alla prova con persone nuove in un contesto extrascolastico. Restare nel network apre la strada a nuove carriere e all'incontro con ragazzi più grandi già affermati nei percorsi più diversi.</p></article>
+      <article><span>Obiettivo 03</span><h3>Dialogo e democrazia</h3><p>Il confronto è al centro di ogni sessione: imparare ad ascoltare posizioni diverse dalle proprie, difendere le proprie idee con argomenti e cercare una sintesi condivisa — un allenamento concreto all'attitudine al dialogo e alla pratica democratica.</p></article>
     </div>
   </section>
 
-  <section class="team-section section" id="team">
-    <div class="section-intro compact team-intro"><p class="kicker">Chi siamo</p><h2>Il team</h2><p>Il team organizzativo lavora con EYP Italy per preparare la sessione e supportare i partecipanti durante l'evento.</p></div>
-    <div class="organiser-grid">
-      <article class="person-card"><div class="person-photo" aria-label="Foto segnaposto di Mattia D’Angelo">MD</div><div><span>Head Organiser</span><h3>Mattia D’Angelo</h3><p>Sapienza Università di Roma · Fisica</p></div></article>
-      <article class="person-card"><div class="person-photo" aria-label="Foto segnaposto di Matteo Rigo">MR</div><div><span>Head Organiser</span><h3>Matteo Rigo</h3><p>Liceo Grigoletti</p></div></article>
+  <section class="section" id="officials">
+    <div class="section-intro compact team-intro"><p class="kicker">Chi siamo</p><h2>I nostri officials</h2><p>In EYP, gli "officials" sono i membri dello staff: i volontari che costruiscono e realizzano ogni aspetto della sessione. Ecco i sei team dietro RS Verona 2026.</p></div>
+
+    <div data-roles>
+      <div class="officials-tabs" role="tablist" aria-label="Scegli un team">
+        <button class="active" type="button" role="tab" aria-selected="true" aria-controls="officials-0" data-tab="0">Organising Team</button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="officials-1" data-tab="1">Academic Team</button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="officials-2" data-tab="2">Media Team</button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="officials-3" data-tab="3">Jury Team</button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="officials-4" data-tab="4">NC Representatives</button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="officials-5" data-tab="5">Safe Team</button>
+      </div>
+
+      <div class="officials-panel" id="officials-0" role="tabpanel" data-panel="0">
+        <div class="officials-tier lv1"><p class="officials-tier-label">Head Organisers</p><div class="officials-grid">
+          <article class="official-chip"><span class="official-avatar"><img src="../assets/images/officials/mattia-dangelo.jpg" alt="" loading="lazy"></span><span class="official-info"><strong>Mattia D'Angelo</strong><small>Sapienza Università di Roma · Fisica</small></span></article>
+          <article class="official-chip"><span class="official-avatar"><img src="../assets/images/officials/matteo-rigo.jpg" alt="" loading="lazy"></span><span class="official-info"><strong>Matteo Rigo</strong><small>Liceo Grigoletti</small></span></article>
+        </div></div>
+        <div class="officials-tier lv2"><p class="officials-tier-label">Core Organiser</p><div class="officials-grid">
+          <article class="official-chip"><span class="official-avatar">?</span><span class="official-info"><strong>Nome da confermare</strong><small>Core Organiser</small></span></article>
+        </div></div>
+        <div class="officials-tier lv3"><p class="officials-tier-label">Organisers</p><div class="officials-grid">
+          <article class="official-chip"><span class="official-avatar">?</span><span class="official-info"><strong>Nome da confermare</strong><small>Organiser</small></span></article>
+          <article class="official-chip"><span class="official-avatar">?</span><span class="official-info"><strong>Nome da confermare</strong><small>Organiser</small></span></article>
+          <article class="official-chip"><span class="official-avatar">?</span><span class="official-info"><strong>Nome da confermare</strong><small>Organiser</small></span></article>
+          <article class="official-chip"><span class="official-avatar">?</span><span class="official-info"><strong>Nome da confermare</strong><small>Organiser</small></span></article>
+          <article class="official-chip"><span class="official-avatar">?</span><span class="official-info"><strong>Nome da confermare</strong><small>Organiser</small></span></article>
+          <article class="official-chip"><span class="official-avatar">?</span><span class="official-info"><strong>Nome da confermare</strong><small>Organiser</small></span></article>
+        </div></div>
+      </div>
+
+      <div class="officials-panel" id="officials-1" role="tabpanel" data-panel="1" hidden>
+        <div class="officials-tier lv1"><p class="officials-tier-label">Presidents</p><div class="officials-grid">
+          <article class="official-chip"><span class="official-avatar"><img src="../assets/images/officials/dorian-morgenroth.jpg" alt="" loading="lazy"></span><span class="official-info"><strong>Dorian Morgenroth</strong><small>President</small></span></article>
+          <article class="official-chip"><span class="official-avatar"><img src="../assets/images/officials/pau-ferrer.jpg" alt="" loading="lazy"></span><span class="official-info"><strong>Pau Ferrer</strong><small>President</small></span></article>
+        </div></div>
+        <div class="officials-tier lv2"><p class="officials-tier-label">Vice Presidents</p><div class="officials-grid">
+          <article class="official-chip"><span class="official-avatar"><img src="../assets/images/officials/matteo-canarutto-gatti.jpg" alt="" loading="lazy"></span><span class="official-info"><strong>Matteo Canarutto Gatti</strong><small>Vice President</small></span></article>
+          <article class="official-chip"><span class="official-avatar">?</span><span class="official-info"><strong>Nome da confermare</strong><small>Vice President</small></span></article>
+        </div></div>
+        <div class="officials-tier lv3"><p class="officials-tier-label">Chairpersons</p><div class="officials-grid">
+          <article class="official-chip"><span class="official-avatar"><img src="../assets/images/officials/alba-tenesa.jpg" alt="" loading="lazy"></span><span class="official-info"><strong>Alba Tenesa</strong><small>Chairperson</small></span></article>
+          <article class="official-chip"><span class="official-avatar"><img src="../assets/images/officials/batu-bolukemini.jpg" alt="" loading="lazy"></span><span class="official-info"><strong>Batu Bölükemini</strong><small>Chairperson</small></span></article>
+          <article class="official-chip"><span class="official-avatar"><img src="../assets/images/officials/carolina-andrade.jpg" alt="" loading="lazy"></span><span class="official-info"><strong>Carolina Andrade</strong><small>Chairperson</small></span></article>
+          <article class="official-chip"><span class="official-avatar"><img src="../assets/images/officials/emma-belleri.jpg" alt="" loading="lazy"></span><span class="official-info"><strong>Emma Belleri</strong><small>Chairperson</small></span></article>
+          <article class="official-chip"><span class="official-avatar"><img src="../assets/images/officials/noemi-szendroi.jpg" alt="" loading="lazy"></span><span class="official-info"><strong>Noémi Szendröi</strong><small>Chairperson</small></span></article>
+          <article class="official-chip"><span class="official-avatar"><img src="../assets/images/officials/patrizia-ivan.jpg" alt="" loading="lazy"></span><span class="official-info"><strong>Patrizia Ivan</strong><small>Chairperson</small></span></article>
+          <article class="official-chip"><span class="official-avatar"><img src="../assets/images/officials/tao.jpg" alt="" loading="lazy"></span><span class="official-info"><strong>Tao</strong><small>Chairperson</small></span></article>
+        </div></div>
+      </div>
+
+      <div class="officials-panel" id="officials-2" role="tabpanel" data-panel="2" hidden>
+        <div class="officials-tier lv1"><p class="officials-tier-label">Editress</p><div class="officials-grid">
+          <article class="official-chip"><span class="official-avatar"><img src="../assets/images/officials/amelia-muradzade.jpg" alt="" loading="lazy"></span><span class="official-info"><strong>Amelia Muradzade</strong><small>Editress</small></span></article>
+        </div></div>
+        <div class="officials-tier lv2"><p class="officials-tier-label">Editorial Assistants</p><div class="officials-grid">
+          <article class="official-chip"><span class="official-avatar"><img src="../assets/images/officials/elena-macura.jpg" alt="" loading="lazy"></span><span class="official-info"><strong>Elena Macura</strong><small>Editorial Assistant</small></span></article>
+          <article class="official-chip"><span class="official-avatar"><img src="../assets/images/officials/maria-amvrosova.jpg" alt="" loading="lazy"></span><span class="official-info"><strong>Maria Amvrosova</strong><small>Editorial Assistant</small></span></article>
+        </div></div>
+        <div class="officials-tier lv3"><p class="officials-tier-label">Media Team Members</p><div class="officials-grid">
+          <article class="official-chip"><span class="official-avatar"><img src="../assets/images/officials/alessio-baccaglini.jpg" alt="" loading="lazy"></span><span class="official-info"><strong>Alessio Baccaglini</strong><small>Media Team Member</small></span></article>
+          <article class="official-chip"><span class="official-avatar"><img src="../assets/images/officials/bianca-lorenti.jpg" alt="" loading="lazy"></span><span class="official-info"><strong>Bianca Lorenti</strong><small>Media Team Member</small></span></article>
+          <article class="official-chip"><span class="official-avatar"><img src="../assets/images/officials/celine-taeymans.jpg" alt="" loading="lazy"></span><span class="official-info"><strong>Céline Taeymans</strong><small>Media Team Member</small></span></article>
+          <article class="official-chip"><span class="official-avatar"><img src="../assets/images/officials/hanna-szendroi.jpg" alt="" loading="lazy"></span><span class="official-info"><strong>Hanna Szendrői</strong><small>Media Team Member</small></span></article>
+          <article class="official-chip"><span class="official-avatar"><img src="../assets/images/officials/karoliina-bodner.jpg" alt="" loading="lazy"></span><span class="official-info"><strong>Karoliina Bodner</strong><small>Media Team Member</small></span></article>
+          <article class="official-chip"><span class="official-avatar"><img src="../assets/images/officials/safiria-rittossa.jpg" alt="" loading="lazy"></span><span class="official-info"><strong>Safiria Rittossa</strong><small>Media Team Member</small></span></article>
+        </div></div>
+      </div>
+
+      <div class="officials-panel" id="officials-3" role="tabpanel" data-panel="3" hidden>
+        <div class="officials-tier lv1"><p class="officials-tier-label">Head of Jury</p><div class="officials-grid">
+          <article class="official-chip"><span class="official-avatar"><img src="../assets/images/officials/khoren-movsisyan.jpg" alt="" loading="lazy"></span><span class="official-info"><strong>Khoren Movsisyan</strong><small>Head of Jury</small></span></article>
+        </div></div>
+        <div class="officials-tier lv3"><p class="officials-tier-label">Jurors</p><div class="officials-grid">
+          <article class="official-chip"><span class="official-avatar">?</span><span class="official-info"><strong>Nome da confermare</strong><small>Juror</small></span></article>
+          <article class="official-chip"><span class="official-avatar">?</span><span class="official-info"><strong>Nome da confermare</strong><small>Juror</small></span></article>
+          <article class="official-chip"><span class="official-avatar">?</span><span class="official-info"><strong>Nome da confermare</strong><small>Juror</small></span></article>
+        </div></div>
+      </div>
+
+      <div class="officials-panel" id="officials-4" role="tabpanel" data-panel="4" hidden>
+        <div class="officials-tier lv1"><p class="officials-tier-label">Leadership Board Member</p><div class="officials-grid">
+          <article class="official-chip"><span class="official-avatar">?</span><span class="official-info"><strong>Nome da confermare</strong><small>Leadership Board Member</small></span></article>
+        </div></div>
+        <div class="officials-tier lv3"><p class="officials-tier-label">NC Representatives</p><div class="officials-grid">
+          <article class="official-chip"><span class="official-avatar">?</span><span class="official-info"><strong>Nome da confermare</strong><small>NC Rep</small></span></article>
+          <article class="official-chip"><span class="official-avatar">?</span><span class="official-info"><strong>Nome da confermare</strong><small>NC Rep</small></span></article>
+        </div></div>
+      </div>
+
+      <div class="officials-panel" id="officials-5" role="tabpanel" data-panel="5" hidden>
+        <div class="officials-tier lv2"><p class="officials-tier-label">Event Safe Persons</p><div class="officials-grid">
+          <article class="official-chip"><span class="official-avatar"><img src="../assets/images/officials/claudia-cacciola.jpg" alt="" loading="lazy"></span><span class="official-info"><strong>Claudia Cacciola</strong><small>Event Safe Person</small></span></article>
+          <article class="official-chip"><span class="official-avatar"><img src="../assets/images/officials/deniz-kumsal-temel.jpg" alt="" loading="lazy"></span><span class="official-info"><strong>Deniz Kumsal Temel</strong><small>Event Safe Person</small></span></article>
+        </div></div>
+      </div>
     </div>
-    <div class="coordination-card">
-      <div><span>EYP Italy</span><h3>Coordinamento</h3></div>
-      <ul><li><strong>Federico Pisani</strong><span>Presidente</span></li><li><strong>Matthieu Chiagano</strong><span>Vicepresidente</span></li><li><strong>Giulia Bardelli</strong><span>Tesoriera</span></li><li><strong>Sofia Campailla</strong><span>Board Member · Eventi</span></li><li><strong>Bianca Brighenti</strong><span>Events Portfolio Assistant</span></li></ul>
-    </div>
+
+    <a class="officials-cta" href="./me-in-eyp.html#roles">
+      <span class="officials-cta-text">
+        <strong>Ti immagini anche tu quassù?</strong>
+        <span>Ogni official di questa pagina è partito come delegato. Dai un'occhiata ai sei team e trova quello giusto per te.</span>
+      </span>
+      <span class="officials-cta-btn">Esplora i team <span aria-hidden="true">→</span></span>
+    </a>
   </section>
 
-  <section class="section" id="partners">
+  <section class="section partners-section" id="partners">
     <div class="section-intro compact"><p class="kicker">Grazie</p><h2>Partner</h2><p>RS Verona 2026 è possibile grazie al sostegno dei nostri partner. Questa sezione sarà aggiornata man mano che nuove collaborazioni verranno confermate.</p></div>
 
     <div class="partners-group">
-      <p class="partners-subtitle">Under the patronage of</p>
+      <p class="partners-subtitle">Con il patrocinio di</p>
       <div class="partners-grid">
-        <div class="partner-tile"><span>Partner</span><strong>Logo e nome da confermare</strong><p>I dettagli su questa collaborazione saranno pubblicati qui una volta confermati. Questo spazio descriverà il ruolo dell'organizzazione nel supportare RS Verona 2026. Logo, nome e descrizione completa sono ancora da definire.</p></div>
-        <div class="partner-tile"><span>Partner</span><strong>Logo e nome da confermare</strong><p>I dettagli su questa collaborazione saranno pubblicati qui una volta confermati. Questo spazio descriverà il ruolo dell'organizzazione nel supportare RS Verona 2026. Logo, nome e descrizione completa sono ancora da definire.</p></div>
-        <div class="partner-tile"><span>Partner</span><strong>Logo e nome da confermare</strong><p>I dettagli su questa collaborazione saranno pubblicati qui una volta confermati. Questo spazio descriverà il ruolo dell'organizzazione nel supportare RS Verona 2026. Logo, nome e descrizione completa sono ancora da definire.</p></div>
-        <div class="partner-tile"><span>Partner</span><strong>Logo e nome da confermare</strong><p>I dettagli su questa collaborazione saranno pubblicati qui una volta confermati. Questo spazio descriverà il ruolo dell'organizzazione nel supportare RS Verona 2026. Logo, nome e descrizione completa sono ancora da definire.</p></div>
+        <button class="partner-card" type="button" data-modal-open="modal-patron-veneto"><img src="../assets/images/partners/regione-veneto.jpg" alt="Regione del Veneto"><span>Patrocinio</span><strong>Regione del Veneto</strong><p>Patrocinio della Regione del Veneto a RS Verona 2026.</p><span class="partner-card-cta">Scopri di più →</span></button>
+        <button class="partner-card" type="button" data-modal-open="modal-patron-provincia"><img src="../assets/images/partners/provincia-verona.jpg" alt="Provincia di Verona"><span>Patrocinio</span><strong>Provincia di Verona</strong><p>Patrocinio della Provincia di Verona a RS Verona 2026.</p><span class="partner-card-cta">Scopri di più →</span></button>
+        <button class="partner-card" type="button" data-modal-open="modal-patron-comune"><span>Patrocinio</span><strong>Comune di Verona</strong><p>Patrocinio del Comune di Verona a RS Verona 2026.</p><span class="partner-card-cta">Scopri di più →</span></button>
+        <button class="partner-card" type="button" data-modal-open="modal-patron-cciaa"><img src="../assets/images/partners/camera-commercio.png" alt="Camera di Commercio di Verona"><span>Patrocinio</span><strong>Camera di Commercio di Verona</strong><p>Patrocinio della Camera di Commercio Industria Artigianato Agricoltura di Verona.</p><span class="partner-card-cta">Scopri di più →</span></button>
       </div>
     </div>
 
     <div class="partners-group">
-      <p class="partners-subtitle">With the support of</p>
+      <p class="partners-subtitle">Con il supporto di</p>
       <div class="partners-grid">
-        <div class="partner-tile"><img src="../assets/images/partners/EDISON.png" alt="Edison"><strong>Edison</strong><p>I dettagli su questa collaborazione saranno pubblicati qui una volta confermati. Questo spazio descriverà il ruolo dell'organizzazione nel supportare RS Verona 2026. Descrizione completa ancora da definire.</p></div>
-        <div class="partner-tile"><img src="../assets/images/partners/HTR_BONIFICHE.png" alt="HTR Bonifiche"><strong>HTR Bonifiche</strong><p>I dettagli su questa collaborazione saranno pubblicati qui una volta confermati. Questo spazio descriverà il ruolo dell'organizzazione nel supportare RS Verona 2026. Descrizione completa ancora da definire.</p></div>
-        <div class="partner-tile"><img src="../assets/images/partners/Wep.jpg" alt="WEP"><strong>WEP</strong><p>I dettagli su questa collaborazione saranno pubblicati qui una volta confermati. Questo spazio descriverà il ruolo dell'organizzazione nel supportare RS Verona 2026. Descrizione completa ancora da definire.</p></div>
-        <div class="partner-tile"><img src="../assets/images/partners/confartigianato.png" alt="Confartigianato Imprese Verona"><strong>Confartigianato Imprese Verona</strong><p>I dettagli su questa collaborazione saranno pubblicati qui una volta confermati. Questo spazio descriverà il ruolo dell'organizzazione nel supportare RS Verona 2026. Descrizione completa ancora da definire.</p></div>
-        <div class="partner-tile"><img src="../assets/images/partners/germinal-bio.jpg" alt="Germinal Bio"><strong>Germinal Bio</strong><p>I dettagli su questa collaborazione saranno pubblicati qui una volta confermati. Questo spazio descriverà il ruolo dell'organizzazione nel supportare RS Verona 2026. Descrizione completa ancora da definire.</p></div>
-        <div class="partner-tile"><img src="../assets/images/partners/images-3.png" alt="Meriggio"><strong>Meriggio</strong><p>I dettagli su questa collaborazione saranno pubblicati qui una volta confermati. Questo spazio descriverà il ruolo dell'organizzazione nel supportare RS Verona 2026. Descrizione completa ancora da definire.</p></div>
-        <div class="partner-tile"><span>Partner</span><strong>Logo e nome da confermare</strong><p>I dettagli su questa collaborazione saranno pubblicati qui una volta confermati. Questo spazio descriverà il ruolo dell'organizzazione nel supportare RS Verona 2026. Logo, nome e descrizione completa sono ancora da definire.</p></div>
-        <div class="partner-tile"><span>Partner</span><strong>Logo e nome da confermare</strong><p>I dettagli su questa collaborazione saranno pubblicati qui una volta confermati. Questo spazio descriverà il ruolo dell'organizzazione nel supportare RS Verona 2026. Logo, nome e descrizione completa sono ancora da definire.</p></div>
+        <button class="partner-card" type="button" data-modal-open="modal-partner-bcc"><img src="../assets/images/partners/bcc-veneta.png" alt="BCC Veneta"><strong>BCC Veneta</strong><p>BCC Veneta, gruppo BCC Iccrea, sostiene RS Verona 2026.</p><span class="partner-card-cta">Scopri di più →</span></button>
+        <button class="partner-card" type="button" data-modal-open="modal-partner-meriggio"><img src="../assets/images/partners/images-3.png" alt="Meriggio"><strong>Meriggio</strong><p>Meriggio sostiene RS Verona 2026.</p><span class="partner-card-cta">Scopri di più →</span></button>
+        <button class="partner-card" type="button" data-modal-open="modal-partner-htr"><img src="../assets/images/partners/HTR_BONIFICHE.png" alt="HTR Bonifiche"><strong>HTR Bonifiche</strong><p>HTR Bonifiche sostiene RS Verona 2026.</p><span class="partner-card-cta">Scopri di più →</span></button>
+        <button class="partner-card" type="button" data-modal-open="modal-partner-wep"><img src="../assets/images/partners/Wep.jpg" alt="WEP"><strong>WEP</strong><p>WEP sostiene RS Verona 2026.</p><span class="partner-card-cta">Scopri di più →</span></button>
+        <button class="partner-card" type="button" data-modal-open="modal-partner-edison"><img src="../assets/images/partners/EDISON.png" alt="Edison"><strong>Edison</strong><p>Edison, gruppo EDF, sostiene RS Verona 2026.</p><span class="partner-card-cta">Scopri di più →</span></button>
+        <button class="partner-card" type="button" data-modal-open="modal-partner-confartigianato"><img src="../assets/images/partners/confartigianato.png" alt="Confartigianato Imprese Verona"><strong>Confartigianato Imprese Verona</strong><p>Confartigianato Imprese Verona sostiene RS Verona 2026.</p><span class="partner-card-cta">Scopri di più →</span></button>
+        <button class="partner-card" type="button" data-modal-open="modal-partner-germinal"><img src="../assets/images/partners/germinal-bio.jpg" alt="Germinal Bio"><strong>Germinal Bio</strong><p>Germinal Bio sostiene RS Verona 2026.</p><span class="partner-card-cta">Scopri di più →</span></button>
       </div>
     </div>
+
+    <dialog id="modal-patron-veneto" class="brochure"><button class="brochure-close" type="button" data-modal-close aria-label="Chiudi">✕</button><div class="brochure-body"><p class="eyebrow">Con il patrocinio di</p><h3>Regione del Veneto</h3><p>RS Verona 2026 si svolge con il patrocinio della Regione del Veneto. Il profilo completo di questo riconoscimento sarà pubblicato qui a breve.</p></div></dialog>
+    <dialog id="modal-patron-provincia" class="brochure"><button class="brochure-close" type="button" data-modal-close aria-label="Chiudi">✕</button><div class="brochure-body"><p class="eyebrow">Con il patrocinio di</p><h3>Provincia di Verona</h3><p>RS Verona 2026 si svolge con il patrocinio della Provincia di Verona. Il profilo completo di questo riconoscimento sarà pubblicato qui a breve.</p></div></dialog>
+    <dialog id="modal-patron-comune" class="brochure"><button class="brochure-close" type="button" data-modal-close aria-label="Chiudi">✕</button><div class="brochure-body"><p class="eyebrow">Con il patrocinio di</p><h3>Comune di Verona</h3><p>RS Verona 2026 si svolge con il patrocinio del Comune di Verona. Il profilo completo di questo riconoscimento sarà pubblicato qui a breve.</p></div></dialog>
+    <dialog id="modal-patron-cciaa" class="brochure"><button class="brochure-close" type="button" data-modal-close aria-label="Chiudi">✕</button><div class="brochure-body"><p class="eyebrow">Con il patrocinio di</p><h3>Camera di Commercio Industria Artigianato Agricoltura Verona</h3><p>RS Verona 2026 si svolge con il patrocinio della Camera di Commercio di Verona. Il profilo completo di questo riconoscimento sarà pubblicato qui a breve.</p></div></dialog>
+    <dialog id="modal-partner-bcc" class="brochure"><button class="brochure-close" type="button" data-modal-close aria-label="Chiudi">✕</button><div class="brochure-body"><p class="eyebrow">Con il supporto di</p><h3>BCC Veneta</h3><p>BCC Veneta, banca di credito cooperativo del Gruppo BCC Iccrea, sostiene RS Verona 2026. Il profilo completo della collaborazione sarà pubblicato qui a breve.</p></div></dialog>
+    <dialog id="modal-partner-edison" class="brochure"><button class="brochure-close" type="button" data-modal-close aria-label="Chiudi">✕</button><div class="brochure-body"><p class="eyebrow">Con il supporto di</p><h3>Edison</h3><p>Edison, gruppo energetico parte di EDF Group, sostiene RS Verona 2026. Il profilo completo della collaborazione sarà pubblicato qui a breve.</p></div></dialog>
+    <dialog id="modal-partner-htr" class="brochure"><button class="brochure-close" type="button" data-modal-close aria-label="Chiudi">✕</button><div class="brochure-body"><p class="eyebrow">Con il supporto di</p><h3>HTR Bonifiche</h3><p>HTR Bonifiche sostiene RS Verona 2026. Il profilo completo della collaborazione sarà pubblicato qui a breve.</p></div></dialog>
+    <dialog id="modal-partner-wep" class="brochure"><button class="brochure-close" type="button" data-modal-close aria-label="Chiudi">✕</button><div class="brochure-body"><p class="eyebrow">Con il supporto di</p><h3>WEP</h3><p>WEP sostiene RS Verona 2026. Il profilo completo della collaborazione sarà pubblicato qui a breve.</p></div></dialog>
+    <dialog id="modal-partner-confartigianato" class="brochure"><button class="brochure-close" type="button" data-modal-close aria-label="Chiudi">✕</button><div class="brochure-body"><p class="eyebrow">Con il supporto di</p><h3>Confartigianato Imprese Verona</h3><p>Confartigianato Imprese Verona, l'associazione degli artigiani veronesi, sostiene RS Verona 2026. Il profilo completo della collaborazione sarà pubblicato qui a breve.</p></div></dialog>
+    <dialog id="modal-partner-germinal" class="brochure"><button class="brochure-close" type="button" data-modal-close aria-label="Chiudi">✕</button><div class="brochure-body"><p class="eyebrow">Con il supporto di</p><h3>Germinal Bio</h3><p>Germinal Bio sostiene RS Verona 2026. Il profilo completo della collaborazione sarà pubblicato qui a breve.</p></div></dialog>
+    <dialog id="modal-partner-meriggio" class="brochure"><button class="brochure-close" type="button" data-modal-close aria-label="Chiudi">✕</button><div class="brochure-body"><p class="eyebrow">Con il supporto di</p><h3>Meriggio</h3><p>Meriggio sostiene RS Verona 2026. Il profilo completo della collaborazione sarà pubblicato qui a breve.</p></div></dialog>
   </section>
 
   <section class="section" id="numbers">
@@ -115,6 +260,8 @@
       <div><strong>3</strong><span>Fasi: Team Building, Committee Work, General Assembly</span></div>
       <div><strong>1</strong><span>Lingua di lavoro: l'inglese</span></div>
       <div><strong>90%</strong><span>Dei partecipanti passati parteciperebbe a un altro evento EYP</span></div>
+      <div><strong>66,8%</strong><span>Ha migliorato le proprie capacità di cooperazione e comprensione interculturale</span></div>
+      <div><strong>70,8%</strong><span>Ha aumentato il proprio impegno per una società europea più pacifica e democratica</span></div>
     </div>
   </section>
 

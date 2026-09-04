@@ -66,6 +66,22 @@ initTabs(schedule, 1);
 initTabs(document.querySelector("[data-audience]"), 0);
 initTabs(document.querySelector("[data-roles]"), 0);
 
+document.querySelectorAll("[data-modal-open]").forEach((trigger) => {
+  trigger.addEventListener("click", () => {
+    const dialog = document.getElementById(trigger.dataset.modalOpen);
+    if (dialog) dialog.showModal();
+  });
+});
+
+document.querySelectorAll("dialog.brochure").forEach((dialog) => {
+  dialog.querySelectorAll("[data-modal-close]").forEach((btn) => {
+    btn.addEventListener("click", () => dialog.close());
+  });
+  dialog.addEventListener("click", (event) => {
+    if (event.target === dialog) dialog.close();
+  });
+});
+
 const counters = document.querySelectorAll("[data-counter]");
 
 if (counters.length && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
