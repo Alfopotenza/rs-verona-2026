@@ -27,7 +27,7 @@ session and is kept English-only.
 - Showcase pages (EN): edit the file directly in the repository root.
 - Showcase pages (IT): edit the matching file in `it/` — same filename, same section IDs.
 - Event's Hub: edit `hub.html` only.
-- Colours and layout: `assets/styles.css`
+- Colours and layout: `assets/styles.css`. The photo backgrounds (parallax on desktop, static on phones) are declared once as `--photo-*` variables at the top of the "Visual upgrade" block.
 - Interactive schedule/countdown: `assets/script.js`
 - Logo and images: `assets/images/`
 - Future PDF booklets: `documents/`
@@ -48,7 +48,14 @@ site to work both at `username.github.io` and at `username.github.io/repository-
 
 ### Partners
 
-The Partners section in `rsverona.html` and `it/rsverona.html` lists confirmed supporters. Update both languages when partnerships change; use the session mailbox for partnership enquiries.
+The Partners section in `rsverona.html` and `it/rsverona.html` has three groups: patronages, supporters and food partners. Update both languages when partnerships change; use the session mailbox for partnership enquiries. Cards without a logo (European Parliament, Municipality of Verona and most food partners) simply show their name: to add a logo, drop the image in `assets/images/partners/` and add an `<img>` at the start of the card, as the other cards do.
+
+### Event's Hub details
+
+- **Schedule**: each day is a `.schedule-panel` in `hub.html`, with its timeline and a "host school / hotels" block underneath. Only the selected day is shown; the page opens on today's date during the session.
+- **Menu**: the Lunch & dinner card opens the `#modal-menu` dialog (menu provided by Arya SRL).
+- **Venues**: addresses are listed in the "Addresses & transfers" and "Stay information" cards.
+- **Members' Platform**: the "Apply to another session" card in `me-in-eyp.html` opens a dialog (`#modal-apply`) that sends people to the sign-in or sign-up page.
 
 ## Local preview
 

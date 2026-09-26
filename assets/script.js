@@ -152,5 +152,5 @@ document.querySelectorAll(".site-header").forEach((header) => {
   document.addEventListener("click", (event) => {
     if (!header.contains(event.target)) close();
   });
-  window.matchMedia("(min-width: 981px)").addEventListener("change", close);
+  window.matchMedia("(min-width: 1181px)").addEventListener("change", close);
 });

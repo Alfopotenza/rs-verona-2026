@@ -26,13 +26,15 @@
     <button class="menu-toggle" type="button" aria-controls="mobile-navigation" aria-expanded="false" aria-label="Apri il menu"><span></span><span></span><span></span></button>
     <nav class="main-nav" id="mobile-navigation" aria-label="Navigazione principale">
       <a href="./index.html">Home</a><a href="./rsverona.html">RS Verona</a><a href="./topics.html">Topic</a><a class="active" href="./me-in-eyp.html">Io nell'EYP</a><a href="./contacts.html">Contatti</a>
+      <a class="nav-extra nav-extra-hub" href="../hub.html">Event's Hub →</a><a class="nav-extra" href="https://eypitaly.org" target="_blank" rel="noreferrer">← Ritorna su EYP Italy</a>
     </nav>
     <div class="header-actions">
       <div class="lang-switch" aria-label="Lingua">
         <a class="flag" href="../me-in-eyp.html" hreflang="en" lang="en" title="English"><svg viewBox="0 0 640 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path fill="#012169" d="M0 0h640v480H0z"/><path fill="#FFF" d="M75 0l244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-179L0 62V0z"/><path fill="#C8102E" d="M424 281l216 159v40L369 281h55zm-184 20l6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"/><path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z"/><path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"/></svg></a>
         <span class="flag active" title="Italiano"><svg viewBox="0 0 3 2" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1" height="2" fill="#008C45"/><rect x="1" width="1" height="2" fill="#F4F5F0"/><rect x="2" width="1" height="2" fill="#CD212A"/></svg></span>
       </div>
-      <a class="header-link stacked" href="../hub.html"><span>Event's Hub →</span><small>For participants</small></a>
+      <a class="header-link stacked" href="../hub.html"><span>Event's Hub →</span><small>Per i partecipanti</small></a>
+      <a class="header-link stacked" href="https://eypitaly.org" target="_blank" rel="noreferrer"><span>← Ritorna su EYP Italy</span><small>eypitaly.org</small></a>
     </div>
   </header>
 
@@ -166,10 +168,22 @@
       <p>Qualunque strada tu scelga, la rete EYP resta aperta ben oltre la cerimonia di chiusura.</p>
     </div>
     <div class="essential-grid">
-      <article class="essential-card featured"><span>Diventa volontario</span><h3>Organizza una sessione</h3><p>Entra in un team organizzativo, occupati di logistica, media o programma, e contribuisci a costruire la prossima RS da zero.</p><small>Le candidature aprono su eypitaly.org</small><a href="https://eypitaly.org" target="_blank" rel="noreferrer">Scopri di più →</a></article>
-      <article class="essential-card"><span>Torna come delegato</span><h3>Candidati a un'altra sessione</h3><p>Sessioni regionali, nazionali e internazionali si susseguono durante tutto l'anno in Italia e in Europa.</p><a href="https://eypitaly.org" target="_blank" rel="noreferrer">Vedi le prossime sessioni →</a></article>
-      <article class="essential-card"><span>Resta connesso</span><h3>Segui e unisciti agli alumni</h3><p>Rimani aggiornato sulle novità di EYP Italy, sui bandi per officer, e ritrova le persone conosciute a Verona.</p><a href="https://www.instagram.com/eypitaly/" target="_blank" rel="noreferrer">Seguici su Instagram →</a></article>
+      <article class="essential-card"><span>Diventa volontario</span><h3>Organizza una sessione</h3><p>Entra in un team organizzativo, occupati di logistica, media o programma, e contribuisci a costruire la prossima RS da zero.</p><small>Le candidature aprono su eypitaly.org</small><a href="https://eypitaly.org" target="_blank" rel="noreferrer">Scopri di più →</a></article>
+      <article class="essential-card"><span>Torna come delegato</span><h3>Candidati a un'altra sessione</h3><p>Sessioni regionali, nazionali e internazionali si susseguono durante tutto l'anno in Italia e in Europa.</p><button class="card-link" type="button" data-modal-open="modal-apply">Cliccami</button></article>
+      <article class="essential-card"><span>Resta connesso</span><h3>Segui e unisciti agli alumni</h3><p>Rimani aggiornato sulle novità di EYP Italy, sui bandi per official, e ritrova le persone conosciute a Verona.</p><a href="https://www.instagram.com/eypitaly/" target="_blank" rel="noreferrer">Seguici su Instagram →</a></article>
     </div>
+    <dialog id="modal-apply" class="brochure">
+      <button class="brochure-close" type="button" data-modal-close aria-label="Chiudi">✕</button>
+      <div class="brochure-body">
+        <p class="eyebrow">Torna come delegato</p>
+        <h3>Hai già l'account sulla Members' Platform?</h3>
+        <p>Ti serve per candidarti a qualsiasi sessione EYP. Scegli l'opzione giusta per te:</p>
+        <div class="apply-choice">
+          <a class="apply-yes" href="https://members.eyp.org/auth/sign_in" target="_blank" rel="noreferrer"><strong>Sì</strong><span>Accedi →</span></a>
+          <a class="apply-no" href="https://members.eyp.org/auth/sign_up" target="_blank" rel="noreferrer"><strong>No</strong><span>Crea un account →</span></a>
+        </div>
+      </div>
+    </dialog>
   </section>
 
   <footer>

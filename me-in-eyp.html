@@ -26,6 +26,7 @@
     <button class="menu-toggle" type="button" aria-controls="mobile-navigation" aria-expanded="false" aria-label="Open menu"><span></span><span></span><span></span></button>
     <nav class="main-nav" id="mobile-navigation" aria-label="Main navigation">
       <a href="./index.html">Home</a><a href="./rsverona.html">RS Verona</a><a href="./topics.html">Topics</a><a class="active" href="./me-in-eyp.html">Me in EYP</a><a href="./contacts.html">Contacts</a>
+      <a class="nav-extra nav-extra-hub" href="./hub.html">Event's Hub →</a><a class="nav-extra" href="https://eypitaly.org" target="_blank" rel="noreferrer">← Back to EYP Italy</a>
     </nav>
     <div class="header-actions">
       <div class="lang-switch" aria-label="Language">
@@ -33,6 +34,7 @@
         <a class="flag" href="./it/me-in-eyp.html" hreflang="it" lang="it" title="Italiano"><svg viewBox="0 0 3 2" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1" height="2" fill="#008C45"/><rect x="1" width="1" height="2" fill="#F4F5F0"/><rect x="2" width="1" height="2" fill="#CD212A"/></svg></a>
       </div>
       <a class="header-link stacked" href="./hub.html"><span>Event's Hub →</span><small>For participants</small></a>
+      <a class="header-link stacked" href="https://eypitaly.org" target="_blank" rel="noreferrer"><span>← Back to EYP Italy</span><small>eypitaly.org</small></a>
     </div>
   </header>
 
@@ -114,7 +116,7 @@
       <details class="faq-accordion-item">
         <summary><span>How can I become an official?</span><svg class="faq-arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7l5 6 5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
         <div class="faq-answer">
-          <p>To become an official, you must sign in on the Members' Platform. After the session, you'll receive an email with all the information, and your NC will recognise your account (otherwise, for Italian delegates, send an email to <a href="mailto:hr@eypitaly.org">hr@eypitaly.org</a> asking for it).</p>
+          <p>To become an official, you must register on the Members' Platform. After the session, you'll receive an email with all the information, and your NC will recognise your account (otherwise, for Italian delegates, send an email to <a href="mailto:hr@eypitaly.org">hr@eypitaly.org</a> asking for it).</p>
           <p>In the Members' Platform, you can find all the events organised throughout the network, and you can apply to them for all the available positions!</p>
         </div>
       </details>
@@ -166,10 +168,22 @@
       <p>Whichever way you choose, the EYP network stays open long after the closing ceremony.</p>
     </div>
     <div class="essential-grid">
-      <article class="essential-card featured"><span>Volunteer</span><h3>Organise a session</h3><p>Join an organising team, take on logistics, media or programme roles, and help build the next RS from the ground up.</p><small>Applications open on eypitaly.org</small><a href="https://eypitaly.org" target="_blank" rel="noreferrer">Learn more →</a></article>
-      <article class="essential-card"><span>Delegate again</span><h3>Apply to another session</h3><p>Regional, national and international sessions run throughout the year across Italy and Europe.</p><a href="https://eypitaly.org" target="_blank" rel="noreferrer">See upcoming sessions →</a></article>
+      <article class="essential-card"><span>Volunteer</span><h3>Organise a session</h3><p>Join an organising team, take on logistics, media or programme roles, and help build the next RS from the ground up.</p><small>Applications open on eypitaly.org</small><a href="https://eypitaly.org" target="_blank" rel="noreferrer">Learn more →</a></article>
+      <article class="essential-card"><span>Delegate again</span><h3>Apply to another session</h3><p>Regional, national and international sessions run throughout the year across Italy and Europe.</p><button class="card-link" type="button" data-modal-open="modal-apply">Click me</button></article>
       <article class="essential-card"><span>Stay connected</span><h3>Follow & join the alumni</h3><p>Keep up with EYP Italy news, calls for officials, and reconnect with people you met in Verona.</p><a href="https://www.instagram.com/eypitaly/" target="_blank" rel="noreferrer">Follow on Instagram →</a></article>
     </div>
+    <dialog id="modal-apply" class="brochure">
+      <button class="brochure-close" type="button" data-modal-close aria-label="Close">✕</button>
+      <div class="brochure-body">
+        <p class="eyebrow">Delegate again</p>
+        <h3>Do you already have an account on the Members' Platform?</h3>
+        <p>You need one to apply to any EYP session. Pick the option that fits you:</p>
+        <div class="apply-choice">
+          <a class="apply-yes" href="https://members.eyp.org/auth/sign_in" target="_blank" rel="noreferrer"><strong>Yes</strong><span>Sign in →</span></a>
+          <a class="apply-no" href="https://members.eyp.org/auth/sign_up" target="_blank" rel="noreferrer"><strong>No</strong><span>Create an account →</span></a>
+        </div>
+      </div>
+    </dialog>
   </section>
 
   <footer>
