@@ -38,7 +38,7 @@ Every page in `it/` links back to its English counterpart (and vice versa) throu
 When a booklet is ready, add the PDF to `documents/` and replace the corresponding material row in `hub.html` with a link. Always use relative links, for example:
 
 ```html
-<a class="material-row" href="./documents/travel-booklet.pdf">
+<a class="material-row" href="./documents/welcome-booklet.pdf">
   <!-- row content -->
 </a>
 ```
