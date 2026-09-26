@@ -337,3 +337,28 @@ footer{padding:55px clamp(24px,7vw,110px) 26px;background:radial-gradient(circle
 }
 
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.essential-grid:not([hidden]),.roles-panel:not([hidden]),.officials-panel:not([hidden]){animation:none}.partner-card,.partner-card::before,.city-card,.city-card::before,.practical-grid article,.practical-grid article::before{transition:none}.partner-card:hover,.city-card:hover,.practical-grid article:hover{transform:none}}
+
+/* Navigation remains reachable on small screens. */
+.menu-toggle{display:none;align-items:center;justify-content:center;flex-direction:column;gap:5px;width:44px;height:44px;border:1px solid var(--line);background:var(--paper);cursor:pointer}
+.menu-toggle span{display:block;width:20px;height:2px;background:var(--ink)}
+:focus-visible{outline:3px solid var(--rust);outline-offset:3px}
+@media(max-width:980px){
+  .site-header{grid-template-columns:minmax(0,1fr) auto auto;gap:12px}
+  .brand-group{min-width:0}
+  .menu-toggle{display:flex;grid-column:3;grid-row:1}
+  .header-actions{grid-column:2;grid-row:1}
+  .main-nav{display:none;position:absolute;top:100%;left:0;right:0;max-height:calc(100dvh - 68px);overflow-y:auto;padding:12px 20px 22px;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 14px 22px rgba(0,0,0,.14);flex-direction:column;align-items:stretch;gap:0}
+  .main-nav.is-open{display:flex}
+  .main-nav a{display:block;padding:14px 8px;border-bottom:1px solid var(--line);font-size:15px}
+}
+@media(max-width:640px){
+  .site-header{gap:8px}
+  .site-header .eyp-mark,.site-header .brand-divider{display:none}
+  .brand{gap:5px}.brand>span{gap:3px}.brand strong{font-size:10px}
+  .header-link.stacked small{display:none}
+  .day-tabs{scrollbar-width:thin;scroll-snap-type:x mandatory}
+  .day-tabs button{scroll-snap-align:start;min-height:56px}
+  .material-status{display:block;grid-column:2}
+  .officials-tabs{flex-wrap:nowrap;overflow-x:auto;gap:20px;scrollbar-width:thin}
+  .officials-tabs button{flex:0 0 auto;min-height:44px}
+}

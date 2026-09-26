@@ -9,15 +9,15 @@ The site uses only HTML, CSS and JavaScript. It has no build step and is ready f
 The site is split into a **showcase** part (English + Italian) and an **Event's Hub** (English only, for delegates and staff during the session).
 
 ```
-index.html                 Home — hero, countdown, session essentials, link to the Hub
-rsverona.html               About RS Verona — Why Verona?, Vision & goals, Team, Partners, Numbers
-me-in-eyp.html               "Me in EYP" — how to stay involved after the session
-helpful-information.html     What EYP is, how to prepare, code of conduct, FAQ
-contacts.html                General contacts (press, partnerships, EYP Italy)
-hub.html                     Event's Hub — schedule, venues & menu, materials, participant contacts
-
-it/                          Italian mirror of the five pages above (same filenames)
+index.html                 Home — hero, countdown and session essentials
+rsverona.html              About RS Verona — vision, team and partners
+topics.html                Committee topics
+me-in-eyp.html             How to stay involved after the session
+contacts.html              Contacts, preparation, safeguarding and FAQ
+hub.html                   Event's Hub — schedule, venues, materials and contacts
+it/                        Italian versions of the five showcase pages (same filenames)
 ```
+
 
 `hub.html` has no Italian version by design — it's the operational page used during the
 session and is kept English-only.
@@ -48,15 +48,7 @@ site to work both at `username.github.io` and at `username.github.io/repository-
 
 ### Partners
 
-The Partners section on `rsverona.html` (and `it/rsverona.html`) currently has four
-placeholder tiles ("Logo & name to be confirmed"). Send over the confirmed partner
-names/logos and replace each `.partner-tile` block, e.g.:
-
-```html
-<div class="partner-tile">
-  <img src="./assets/images/partners/example.png" alt="Example Partner" height="40">
-</div>
-```
+The Partners section in `rsverona.html` and `it/rsverona.html` lists confirmed supporters. Update both languages when partnerships change; use the session mailbox for partnership enquiries.
 
 ## Local preview
 
@@ -87,8 +79,4 @@ If you prefer not to use the included workflow, choose **Deploy from a branch**,
 
 ## Team photos
 
-The two Head Organiser cards currently use initials. To add photographs:
-
-1. Copy each image into `assets/images/team/`.
-2. Replace the relevant `person-photo` block in `rsverona.html` (and `it/rsverona.html`) with an image.
-3. Add meaningful alternative text with the person’s name.
+Official profiles with available photos use images in `assets/images/officials/`. Profiles without photos display an initial. Add new photos to that directory and update both `rsverona.html` and `it/rsverona.html`.
