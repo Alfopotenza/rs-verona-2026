@@ -561,7 +561,7 @@ dialog.brochure.wide{width:min(1000px,94vw)}
 }
 
 /* --- Home hero: photo on the copy side ---------------------------------- */
-.hero-copy{background:linear-gradient(100deg,rgba(43,24,18,.9),rgba(43,24,18,.5)),var(--photo-arena-inside) center 60%/cover;background-attachment:scroll,fixed;color:#fff}
+.hero-copy{background:linear-gradient(100deg,rgba(43,24,18,.8),rgba(43,24,18,.3)),var(--photo-arena-inside) center 55%/cover;color:#fff}
 .hero .eyebrow{color:var(--orange)}
 .hero h1{color:#fff}
 .hero h1 em{color:var(--orange)}
@@ -638,8 +638,8 @@ dialog.brochure.wide{width:min(1000px,94vw)}
 
 /* --- Responsive for the new pieces --------------------------------------- */
 @media(max-width:980px){
-  .hero-copy,.page-intro.on-rust,.about-section,.page-intro.on-orange{background-attachment:scroll,scroll}
-  .hero-copy{background:linear-gradient(180deg,rgba(43,24,18,.88),rgba(43,24,18,.72)),var(--photo-arena-inside) center/cover}
+  .page-intro.on-rust,.about-section,.page-intro.on-orange{background-attachment:scroll,scroll}
+  .hero-copy{background:linear-gradient(180deg,rgba(43,24,18,.82),rgba(43,24,18,.6)),var(--photo-arena-inside) center/cover}
 }
 @media(max-width:640px){
   .essential-card::after{top:16px;right:20px;font-size:34px}
@@ -659,3 +659,6 @@ dialog.brochure.wide{width:min(1000px,94vw)}
 @media(max-width:640px){
   .partners-grid .partner-card,.partners-grid.cols-3 .partner-card{min-height:0}
 }
+
+/* Wix embed mode (see WIX_PAGES in script.js): Wix provides header and footer */
+.is-embedded .site-header,.is-embedded body>main>footer{display:none}

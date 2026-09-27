@@ -1,3 +1,46 @@
+// ---------------------------------------------------------------------------
+// Wix embed mode. When a page is shown inside a Wix "Embed HTML" (an iframe),
+// the Wix header/footer replace ours, and links to other pages of this site
+// open the matching Wix page. Fill WIX_PAGES with the Wix address of each page;
+// pages left empty keep opening inside the embed. Preview locally with ?embed=1.
+// ---------------------------------------------------------------------------
+const WIX_PAGES = {
+  "index.html": "https://www.eypitaly.org/rs-verona2026",
+  "rsverona.html": "https://www.eypitaly.org/rs-verona2026/about1",
+  "topics.html": "https://www.eypitaly.org/rs-verona2026/topics",
+  "me-in-eyp.html": "https://www.eypitaly.org/rs-verona2026/me-in-eyp",
+  "contacts.html": "https://www.eypitaly.org/rs-verona2026/contacts",
+  "hub.html": "https://www.eypitaly.org/rs-verona2026/hub",
+  "it/index.html": "",
+  "it/rsverona.html": "",
+  "it/topics.html": "",
+  "it/me-in-eyp.html": "",
+  "it/contacts.html": "",
+};
+
+if (document.documentElement.classList.contains("is-embedded")) {
+  const siteRoot = new URL(document.querySelector('script[src$="assets/script.js"]').getAttribute("src").replace(/assets\/script\.js$/, ""), location.href);
+  const previewParam = new URLSearchParams(location.search).has("embed");
+  document.querySelectorAll("a[href]").forEach((link) => {
+    const raw = link.getAttribute("href");
+    if (/^(#|mailto:|tel:)/.test(raw)) {
+      if (!raw.startsWith("#")) link.target = "_top";
+      return;
+    }
+    const url = new URL(raw, location.href);
+    if (!url.href.startsWith(siteRoot.href) || !url.pathname.endsWith(".html")) return;
+    const page = url.href.slice(siteRoot.href.length).split(/[?#]/)[0];
+    const wix = WIX_PAGES[page];
+    if (wix) {
+      link.href = wix + url.hash;
+      link.target = "_top";
+    } else if (previewParam) {
+      url.searchParams.set("embed", "1");
+      link.href = url.href;
+    }
+  });
+}
+
 const schedule = document.querySelector("[data-schedule]");
 const countdown = document.querySelector("[data-countdown]");
 
