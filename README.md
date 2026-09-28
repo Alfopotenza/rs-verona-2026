@@ -76,8 +76,14 @@ Edit both languages together and keep the statements in the same order.
   WhatsApp, Instagram, Telegram…) and in the QR codes. It is currently
   `https://alfopotenza.github.io/rs-verona-2026/`: if it changes, update the
   `og:url` / `og:image` tags and regenerate the QR codes.
-- `manifest.webmanifest` + `assets/images/icons/` let people add the site to their
-  phone's home screen; it opens on the Event's Hub.
+- The site is a web app: `manifest.webmanifest` + `assets/images/icons/` let people
+  install it on their phone (it opens on the Event's Hub), and `sw.js` keeps it
+  working offline. Pages, CSS, JS and PDFs are always taken from the network when
+  there is a connection, so updates show up immediately; the saved copy is used
+  offline. The Hub shows an "Install" bar (instructions on iPhone). If you add a
+  page or an asset that must work offline from the first visit, add it to
+  `PRECACHE` in `sw.js` and bump `CACHE_VERSION`. The service worker only runs over
+  https or on `localhost` (see "Local preview"), not when opening files directly.
 - `assets/qr/qr-hub.*` (Event's Hub) and `assets/qr/qr-home.*` (home page) are
   ready to print: use the SVG for print, the PNG for slides and social media.
 

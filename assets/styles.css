@@ -812,3 +812,36 @@ html:has(dialog[open]){overflow:hidden}
   .partner-card:hover,.city-card:hover,.practical-grid article:hover,.contact-card:hover{transform:none;box-shadow:none}
   .partner-card:hover::before,.city-card:hover::before,.practical-grid article:hover::before{transform:scaleX(0)}
 }
+
+/* ==========================================================================
+   Web app — install bar (Hub), offline notice, offline page
+   ========================================================================== */
+.install-bar{display:grid;grid-template-columns:56px minmax(0,1fr) auto auto;align-items:center;gap:18px;padding:18px clamp(20px,6vw,88px);background:var(--cream);border-bottom:1px solid var(--line)}
+.install-bar[hidden]{display:none}
+.install-bar img{width:56px;height:56px;border-radius:14px;box-shadow:0 6px 16px -8px rgba(43,24,18,.5)}
+.install-copy strong{display:block;font-size:16px}
+.install-copy p{margin:4px 0 0;color:var(--muted);font-size:14px;line-height:1.5}
+.install-copy .install-hint{color:var(--ink)}
+.share-icon{width:17px;height:17px;vertical-align:-3px;color:#1a73e8}
+.install-bar .install-button{background:var(--rust);border-color:var(--rust);color:#fff;cursor:pointer}
+.install-bar .install-button:hover{background:var(--ink);border-color:var(--ink)}
+.install-close{width:44px;height:44px;border:0;background:transparent;color:var(--muted);font-size:16px;cursor:pointer}
+.install-close:hover{color:var(--ink)}
+@media(max-width:640px){
+  .install-bar{grid-template-columns:48px minmax(0,1fr) 44px;gap:12px 14px;padding:16px 16px 16px 20px}
+  .install-bar img{width:48px;height:48px;border-radius:12px}
+  .install-bar .install-button{grid-column:1/-1;grid-row:2;width:100%}
+  .install-close{grid-column:3;grid-row:1;align-self:start;margin:-8px -8px 0 0}
+}
+
+.offline-pill{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom));z-index:50;transform:translateX(-50%);max-width:calc(100% - 32px);padding:10px 16px;background:var(--ink);color:#fff;border-radius:999px;font-size:13px;font-weight:700;text-align:center;box-shadow:0 10px 24px -10px rgba(0,0,0,.5)}
+.offline-pill[hidden]{display:none}
+
+.offline-page{min-height:100vh;padding:clamp(60px,10vw,120px) clamp(24px,7vw,110px);display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:4px;max-width:760px}
+.offline-page img{margin-bottom:24px}
+.offline-page h1{margin:0 0 18px;font-size:clamp(44px,7vw,80px);line-height:.95;letter-spacing:-.045em}
+.offline-page h1 em{font-family:var(--font-serif),Georgia,serif;font-weight:500;color:var(--rust)}
+.offline-page p:not(.eyebrow){margin:0 0 12px;color:var(--muted);line-height:1.7}
+.offline-page .hero-actions{margin-top:18px}
+.offline-page .hero-actions .button.primary{background:var(--ink);border-color:var(--ink);color:#fff}
+.offline-page .hero-actions .button.secondary{border-color:var(--ink);color:var(--ink)}
