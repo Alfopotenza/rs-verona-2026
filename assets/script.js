@@ -1,46 +1,3 @@
-// ---------------------------------------------------------------------------
-// Wix embed mode. When a page is shown inside a Wix "Embed HTML" (an iframe),
-// the Wix header/footer replace ours, and links to other pages of this site
-// open the matching Wix page. Fill WIX_PAGES with the Wix address of each page;
-// pages left empty keep opening inside the embed. Preview locally with ?embed=1.
-// ---------------------------------------------------------------------------
-const WIX_PAGES = {
-  "index.html": "https://www.eypitaly.org/rs-verona2026",
-  "rsverona.html": "https://www.eypitaly.org/rs-verona2026/about1",
-  "topics.html": "https://www.eypitaly.org/rs-verona2026/topics",
-  "me-in-eyp.html": "https://www.eypitaly.org/rs-verona2026/me-in-eyp",
-  "contacts.html": "https://www.eypitaly.org/rs-verona2026/contacts",
-  "hub.html": "https://www.eypitaly.org/rs-verona2026/hub",
-  "it/index.html": "",
-  "it/rsverona.html": "",
-  "it/topics.html": "",
-  "it/me-in-eyp.html": "",
-  "it/contacts.html": "",
-};
-
-if (document.documentElement.classList.contains("is-embedded")) {
-  const siteRoot = new URL(document.querySelector('script[src$="assets/script.js"]').getAttribute("src").replace(/assets\/script\.js$/, ""), location.href);
-  const previewParam = new URLSearchParams(location.search).has("embed");
-  document.querySelectorAll("a[href]").forEach((link) => {
-    const raw = link.getAttribute("href");
-    if (/^(#|mailto:|tel:)/.test(raw)) {
-      if (!raw.startsWith("#")) link.target = "_top";
-      return;
-    }
-    const url = new URL(raw, location.href);
-    if (!url.href.startsWith(siteRoot.href) || !url.pathname.endsWith(".html")) return;
-    const page = url.href.slice(siteRoot.href.length).split(/[?#]/)[0];
-    const wix = WIX_PAGES[page];
-    if (wix) {
-      link.href = wix + url.hash;
-      link.target = "_top";
-    } else if (previewParam) {
-      url.searchParams.set("embed", "1");
-      link.href = url.href;
-    }
-  });
-}
-
 const schedule = document.querySelector("[data-schedule]");
 const countdown = document.querySelector("[data-countdown]");
 
@@ -196,4 +153,169 @@ document.querySelectorAll(".site-header").forEach((header) => {
     if (!header.contains(event.target)) close();
   });
   window.matchMedia("(min-width: 1181px)").addEventListener("change", close);
+});
+
+// "Which team are you?" quiz (Me in EYP). Questions, profiles and labels live in
+// the HTML, so the English and Italian pages share this code.
+document.querySelectorAll("[data-quiz]").forEach((quiz) => {
+  const ROLES = ["academic", "media", "organising"];
+  const KEYS = { a: "academic", m: "media", o: "organising" };
+  // Corners of the compass triangle (same coordinates as the SVG).
+  const CORNERS = { academic: [150, 20], media: [20, 245], organising: [280, 245] };
+  const CENTRE = [150, 170];
+
+  const names = quiz.dataset.names.split(",");
+  const questions = [...quiz.querySelectorAll(".quiz-items li")].map((item) => ({
+    text: item.textContent,
+    weights: Object.fromEntries(item.dataset.w.split(",").map((pair) => {
+      const [key, value] = pair.split(":");
+      return [KEYS[key], parseFloat(value)];
+    })),
+  }));
+  const $ = (selector) => quiz.querySelector(selector);
+  const start = $("[data-quiz-start]");
+  const run = $("[data-quiz-run]");
+  const result = $("[data-quiz-result]");
+  const questionEl = $("[data-quiz-question]");
+  const count = $("[data-quiz-count]");
+  const bar = $("[data-quiz-bar]");
+  const back = $("[data-quiz-back]");
+  const answerButtons = [...quiz.querySelectorAll(".quiz-scale button")];
+  let answers = [];
+  let current = 0;
+  let shareText = "";
+
+  const show = (panel) => {
+    [start, run, result].forEach((p) => { p.hidden = p !== panel; });
+  };
+
+  const renderQuestion = () => {
+    questionEl.textContent = questions[current].text;
+    count.textContent = `${current + 1} ${quiz.dataset.of} ${questions.length}`;
+    bar.style.width = `${(current / questions.length) * 100}%`;
+    back.hidden = current === 0;
+    answerButtons.forEach((button) => {
+      button.setAttribute("aria-pressed", String(Number(button.dataset.a) === answers[current]));
+    });
+  };
+
+  const score = () => {
+    const shares = {};
+    ROLES.forEach((role) => {
+      let raw = 0;
+      let max = 0;
+      questions.forEach((q, i) => {
+        const w = q.weights[role] || 0;
+        raw += (answers[i] || 0) * w;
+        max += 2 * Math.abs(w);
+      });
+      const normalised = max ? (raw + max) / (2 * max) : 0;
+      shares[role] = normalised ** 2; // squared, so a clear preference stands out
+    });
+    const total = ROLES.reduce((sum, role) => sum + shares[role], 0);
+    ROLES.forEach((role) => { shares[role] = total ? shares[role] / total : 1 / 3; });
+    return shares;
+  };
+
+  const renderResult = () => {
+    const shares = score();
+    const ranked = [...ROLES].sort((x, y) => shares[y] - shares[x]);
+
+    // Whole percentages that add up to 100 (largest remainder), ranked like the shares.
+    const pct = Object.fromEntries(ROLES.map((role) => [role, Math.floor(shares[role] * 100)]));
+    [...ROLES]
+      .sort((x, y) => (shares[y] * 100 - pct[y]) - (shares[x] * 100 - pct[x]))
+      .slice(0, 100 - ROLES.reduce((sum, role) => sum + pct[role], 0))
+      .forEach((role) => { pct[role] += 1; });
+    ranked.sort((x, y) => pct[y] - pct[x] || shares[y] - shares[x]);
+
+    const profileKey = pct[ranked[0]] < 40 ? "balanced" : ranked[0];
+    let profile;
+    quiz.querySelectorAll("[data-quiz-profile]").forEach((el) => {
+      el.hidden = el.dataset.quizProfile !== profileKey;
+      if (!el.hidden) profile = el;
+    });
+    quiz.querySelectorAll("[data-bar]").forEach((row) => {
+      row.querySelector("i").style.width = "0%";
+      row.querySelector("em").textContent = `${pct[row.dataset.bar]}%`;
+      row.classList.toggle("is-top", row.dataset.bar === ranked[0]);
+    });
+    const runnerUp = ranked[1];
+    const runnerEl = $("[data-quiz-runner]");
+    runnerEl.hidden = profileKey === "balanced" || pct[runnerUp] < 5;
+    const close = pct[ranked[0]] - pct[runnerUp] <= 5;
+    runnerEl.classList.toggle("is-close", close);
+    runnerEl.textContent = (close ? quiz.dataset.close : quiz.dataset.runner)
+      .replace("{name}", names[ROLES.indexOf(runnerUp)])
+      .replace("{pct}", pct[runnerUp]);
+    shareText = quiz.dataset.shareText
+      .replace("{title}", profile.dataset.title)
+      .replace("{team}", profile.dataset.team);
+
+    // Move the dot from the centre to the weighted point of the triangle.
+    // Kept slightly inside the triangle so the dot never covers a corner label.
+    const x = CENTRE[0] + 0.86 * (ROLES.reduce((sum, role) => sum + shares[role] * CORNERS[role][0], 0) - CENTRE[0]);
+    const y = CENTRE[1] + 0.86 * (ROLES.reduce((sum, role) => sum + shares[role] * CORNERS[role][1], 0) - CENTRE[1]);
+    const dot = result.querySelector("[data-quiz-dot]");
+    dot.style.transform = `translate(${CENTRE[0]}px, ${CENTRE[1]}px)`;
+    show(result);
+    result.querySelector("[data-quiz-result-copy]").focus({ preventScroll: true });
+    result.scrollIntoView({ block: "start" });
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      dot.style.transform = `translate(${x}px, ${y}px)`;
+      quiz.querySelectorAll("[data-bar]").forEach((row) => {
+        row.querySelector("i").style.width = `${pct[row.dataset.bar]}%`;
+      });
+    }));
+  };
+
+  const begin = () => {
+    answers = [];
+    current = 0;
+    show(run);
+    renderQuestion();
+    questionEl.scrollIntoView({ block: "center" });
+  };
+
+  $("[data-quiz-go]").addEventListener("click", begin);
+  $("[data-quiz-retake]").addEventListener("click", begin);
+
+  answerButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      answers[current] = Number(button.dataset.a);
+      if (current < questions.length - 1) {
+        current += 1;
+        renderQuestion();
+      } else {
+        renderResult();
+      }
+    });
+  });
+
+  back.addEventListener("click", () => {
+    if (current === 0) return;
+    current -= 1;
+    renderQuestion();
+  });
+
+  // Keys 1–4 answer, like the on-screen scale.
+  quiz.addEventListener("keydown", (event) => {
+    if (run.hidden || !/^[1-4]$/.test(event.key)) return;
+    answerButtons[Number(event.key) - 1].click();
+  });
+
+  $("[data-quiz-share]").addEventListener("click", async (event) => {
+    const url = `${location.href.split("#")[0]}#quiz`;
+    if (navigator.share) {
+      try { await navigator.share({ text: shareText, url }); } catch { /* closed */ }
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(`${shareText} ${url}`);
+      const button = event.currentTarget;
+      const label = button.textContent;
+      button.textContent = quiz.dataset.copied;
+      setTimeout(() => { button.textContent = label; }, 2000);
+    } catch { /* clipboard unavailable */ }
+  });
 });

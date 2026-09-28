@@ -12,7 +12,7 @@
 }
 
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:92px;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-sans),Arial,sans-serif}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 a{color:inherit;text-decoration:none}
@@ -660,5 +660,155 @@ dialog.brochure.wide{width:min(1000px,94vw)}
   .partners-grid .partner-card,.partners-grid.cols-3 .partner-card{min-height:0}
 }
 
-/* Wix embed mode (see WIX_PAGES in script.js): Wix provides header and footer */
-.is-embedded .site-header,.is-embedded body>main>footer{display:none}
+/* ==========================================================================
+   Me in EYP — "Which team are you?" quiz (compass)
+   ========================================================================== */
+.quiz-section{background:var(--dark);color:#fff}
+.quiz-section .kicker{color:var(--orange)}
+.quiz-section h2{color:#fff}
+.quiz-section .section-intro>p:last-child{color:rgba(255,255,255,.8)}
+.quiz-card{padding:clamp(24px,4vw,52px);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.16)}
+.quiz-card [hidden]{display:none!important}
+
+.quiz-compass{display:block;width:100%;max-width:420px;height:auto;margin:0 auto;overflow:visible}
+.quiz-compass .zone-academic{fill:rgba(185,54,29,.7)}
+.quiz-compass .zone-media{fill:rgba(232,137,24,.62)}
+.quiz-compass .zone-organising{fill:rgba(246,223,181,.38)}
+.quiz-compass .compass-grid{fill:none;stroke:rgba(255,255,255,.35);stroke-width:1;stroke-dasharray:3 4}
+.quiz-compass .compass-edge{fill:none;stroke:#fff;stroke-width:2;stroke-linejoin:round}
+.quiz-compass .compass-label{fill:#fff;font:800 12px var(--font-sans),Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase}
+.quiz-compass .dot-core{fill:#fff;stroke:var(--ink);stroke-width:3}
+.quiz-compass .dot-ring{fill:rgba(255,255,255,.2);stroke:#fff;stroke-width:1;transform-box:fill-box;transform-origin:center;animation:dot-pulse 1.8s ease-out infinite}
+[data-quiz-dot]{transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+[data-quiz-dot-static]{transform:translate(150px,170px)}
+@keyframes dot-pulse{from{transform:scale(.5);opacity:1}to{transform:scale(1.5);opacity:0}}
+
+.quiz-start{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+.quiz-start-copy{display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+.quiz-time{margin:0;color:var(--cream);font:italic clamp(20px,2vw,26px)/1.3 var(--font-serif),Georgia,serif}
+.quiz-section .button.quiz-go{background:var(--orange);border-color:var(--orange);color:var(--ink)}
+.quiz-section .button.quiz-go:hover{background:#fff;border-color:#fff;color:var(--rust)}
+.quiz-section .button.quiz-ghost{background:transparent;border-color:#fff;color:#fff;cursor:pointer}
+.quiz-section .button.quiz-ghost:hover{background:#fff;color:var(--rust)}
+
+.quiz-progress{display:flex;align-items:center;gap:16px;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--orange)}
+.quiz-progress span:first-child{flex:0 0 auto}
+.quiz-bar{flex:1;height:4px;background:rgba(255,255,255,.15);overflow:hidden}
+.quiz-bar i{display:block;height:100%;width:0;background:var(--orange);transition:width .3s ease}
+.quiz-question{min-height:3.6em;margin:28px 0 30px;max-width:900px;font:500 clamp(24px,3vw,38px)/1.2 var(--font-serif),Georgia,serif;color:#fff}
+.quiz-scale{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.quiz-scale button{min-height:72px;padding:12px 10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:transparent;border:1px solid rgba(255,255,255,.35);color:#fff;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;line-height:1.25;text-align:center;cursor:pointer;transition:background .15s ease,border-color .15s ease,color .15s ease}
+@media(hover:hover){.quiz-scale button:hover{background:rgba(255,255,255,.1);border-color:#fff}}
+.quiz-scale button[aria-pressed="true"]{background:var(--orange);border-color:var(--orange);color:var(--ink)}
+.scale-mark{flex:0 0 22px;width:22px;height:22px;display:grid;place-items:center}
+.scale-mark::before{content:"";box-sizing:border-box;width:15px;height:15px;border-radius:50%;border:2px solid #ef6a4f}
+.quiz-scale button:nth-child(1) .scale-mark::before,.quiz-scale button:nth-child(4) .scale-mark::before{width:22px;height:22px}
+.quiz-scale button:nth-child(n+3) .scale-mark::before{background:var(--orange);border-color:var(--orange)}
+.quiz-scale button[aria-pressed="true"] .scale-mark::before{border-color:var(--ink)}
+.quiz-back{all:unset;box-sizing:border-box;display:inline-flex;align-items:center;min-height:44px;margin-top:14px;cursor:pointer;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.75);text-decoration:underline;text-underline-offset:4px}
+.quiz-back:hover{color:#fff}
+.quiz-back:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+
+.quiz-result{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,5vw,64px);align-items:center}
+.quiz-result-copy:focus{outline:none}
+.quiz-result-copy .kicker{margin-bottom:12px}
+.quiz-team{margin:0;color:var(--cream);font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+.quiz-profile h3{margin:8px 0 14px;font:500 clamp(40px,5vw,64px)/1 var(--font-serif),Georgia,serif;color:#fff}
+.quiz-profile p{margin:0;color:rgba(255,255,255,.84);line-height:1.7}
+.quiz-profile .quiz-team{color:var(--cream)}
+.quiz-profile .quiz-first{margin-top:14px;color:var(--cream)}
+.quiz-profile .quiz-first strong{color:#fff}
+.quiz-bars{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:12px}
+.quiz-bars li{display:grid;grid-template-columns:110px minmax(0,1fr) 46px;align-items:center;gap:12px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+.quiz-bars li.is-top{color:#fff}
+.quiz-bars b{height:10px;background:rgba(255,255,255,.12);overflow:hidden}
+.quiz-bars i{display:block;height:100%;width:0;transition:width 1.1s cubic-bezier(.2,.8,.2,1)}
+.quiz-bars [data-bar="academic"] i{background:#d4492c}
+.quiz-bars [data-bar="media"] i{background:var(--orange)}
+.quiz-bars [data-bar="organising"] i{background:var(--cream)}
+.quiz-bars em{font-style:normal;text-align:right}
+.quiz-runner{margin:14px 0 0;color:rgba(255,255,255,.65);font-size:13px}
+.quiz-runner.is-close{padding:10px 14px;border-left:3px solid var(--orange);background:rgba(255,255,255,.06);color:#fff;font-size:14px}
+.quiz-actions{margin-top:26px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px}
+.quiz-actions .quiz-back{margin-top:0}
+
+.about-section .hero-actions{margin-top:4px}
+
+@media(max-width:820px){
+  .quiz-start,.quiz-result{grid-template-columns:minmax(0,1fr)}
+  .quiz-start .quiz-compass{max-width:300px}
+  .quiz-result .quiz-compass{max-width:340px}
+  .quiz-start-copy{align-items:stretch;text-align:center}
+}
+@media(max-width:640px){
+  .quiz-card{padding:22px 18px;border-left:0;border-right:0;margin:0 -22px}
+  .quiz-question{min-height:4.8em;margin:22px 0;font-size:24px}
+  .quiz-scale{grid-template-columns:minmax(0,1fr);gap:8px}
+  .quiz-scale button{min-height:56px;flex-direction:row;justify-content:flex-start;gap:14px;padding:10px 16px;text-align:left}
+  .quiz-bars li{grid-template-columns:92px minmax(0,1fr) 40px;gap:10px;font-size:11px}
+  .quiz-actions .button{flex:1 1 100%}
+  .quiz-actions .quiz-back{flex:1 1 100%;justify-content:center}
+  .about-section .hero-actions .button{flex:1 1 100%}
+}
+@media(prefers-reduced-motion:reduce){
+  .quiz-compass .dot-ring{animation:none}
+  [data-quiz-dot],.quiz-bars i,.quiz-bar i{transition:none}
+}
+
+/* ==========================================================================
+   Mobile pass — lighter photos, readable labels, comfortable tap targets
+   ========================================================================== */
+a,button,summary{-webkit-tap-highlight-color:rgba(185,54,29,.18)}
+html:has(dialog[open]){overflow:hidden}
+
+/* Whole card is tappable (one link per card). */
+.essential-card:has(a){cursor:pointer}
+.essential-card a{position:static}
+.essential-card a::after{content:"";position:absolute;inset:0;z-index:1}
+
+/* Venue links get a taller hit area without changing the layout. */
+.venue-list a{padding:10px 0;margin:-10px 0}
+.day-venues strong a{display:inline-block;padding:8px 0;margin:-8px 0}
+
+@media(max-width:980px){
+  :root{
+    --photo-arena-inside:url(images/m/arena-inside.jpg);
+    --photo-arena-air:url(images/m/arena-air.jpg);
+    --photo-arena-night:url(images/m/arena-night.jpg);
+    --photo-rooftops:url(images/m/rooftops.jpg);
+  }
+  .page-intro.parallax{background-image:url(images/m/rooftops.jpg)}
+  .roles-section{background-image:url(images/m/roles.jpg)}
+  .page-intro.contacts-hero{background-image:linear-gradient(180deg,rgba(43,24,18,.55),rgba(43,24,18,.9)),url(images/m/sunset.jpg)}
+}
+
+@media(max-width:640px){
+  .kicker,.eyebrow,.essential-card>span,.practical-grid article>span,.partner-card>span,.partner-card-cta,.material-type,.material-status,.contact-card-label,.prep-card>span,.city-card-body .eyebrow,.brochure-body .eyebrow,.officials-tier-label,.official-info small,.countdown-values span,.countdown-heading span,.hero-identity>p,.hero-date span,footer>small,.day-venues span,.facts small,.quiz-team,.add-to-calendar summary{font-size:11px;letter-spacing:.1em}
+  .acr{font-size:11px}
+  .lang-switch .flag{overflow:visible;position:relative}
+  .lang-switch .flag svg{border-radius:4px}
+  .lang-switch a.flag::after{content:"";position:absolute;inset:-12px -6px}
+  footer a{display:inline-block;padding:14px 0}
+  .about-section aside small{font-size:11px}
+  .brand strong{font-size:11px}
+  .site-header .header-link{font-size:11px}
+  .brand>span{white-space:nowrap}
+}
+@media(max-width:420px){
+  .hl-long{display:none}
+  .footer-links{gap:0 22px}
+  .footer-sitemap{gap:0 20px}
+  .add-to-calendar{margin-top:8px}
+  .add-to-calendar summary{padding:12px 0}
+  .add-to-calendar-menu{gap:0;margin-top:0}
+  .add-to-calendar-menu a{padding:10px 0}
+  .roles-more{padding:12px 0 6px}
+  .prep-link{padding:12px 0 4px}
+  .header-link{min-height:44px;display:inline-flex;align-items:center}
+}
+
+/* Touch screens: no "stuck" lift effects after a tap. */
+@media(hover:none){
+  .partner-card:hover,.city-card:hover,.practical-grid article:hover,.contact-card:hover{transform:none;box-shadow:none}
+  .partner-card:hover::before,.city-card:hover::before,.practical-grid article:hover::before{transform:scaleX(0)}
+}

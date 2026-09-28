@@ -57,6 +57,37 @@ The Partners section in `rsverona.html` and `it/rsverona.html` has three groups:
 - **Venues**: addresses are listed in the "Addresses & transfers" and "Stay information" cards.
 - **Members' Platform**: the "Apply to another session" card in `me-in-eyp.html` opens a dialog (`#modal-apply`) that sends people to the sign-in or sign-up page.
 
+### "Which team are you?" quiz
+
+The quiz in `me-in-eyp.html` and `it/me-in-eyp.html` (section `#quiz`) is driven by
+`assets/script.js`, but all its text lives in the HTML:
+
+- each statement is an `<li>` in `.quiz-items`, with `data-w` saying which team it
+  points to and how strongly (`a` Academic, `m` Media, `o` Organising; negative
+  values point away), e.g. `data-w="m:1,a:-0.5"`;
+- each result is a `.quiz-profile` block (`academic`, `media`, `organising`,
+  `balanced` when no team reaches 40%).
+
+Edit both languages together and keep the statements in the same order.
+
+### Sharing, home-screen icon and QR codes
+
+- The site address is written in the `og:*` tags of every page (link previews on
+  WhatsApp, Instagram, Telegram…) and in the QR codes. It is currently
+  `https://alfopotenza.github.io/rs-verona-2026/`: if it changes, update the
+  `og:url` / `og:image` tags and regenerate the QR codes.
+- `manifest.webmanifest` + `assets/images/icons/` let people add the site to their
+  phone's home screen; it opens on the Event's Hub.
+- `assets/qr/qr-hub.*` (Event's Hub) and `assets/qr/qr-home.*` (home page) are
+  ready to print: use the SVG for print, the PNG for slides and social media.
+
+### Images and PDFs on phones
+
+- Photo backgrounds have lighter copies in `assets/images/m/` used up to 980px
+  wide. If you replace a background photo, replace its mobile copy too.
+- The PDFs in `documents/` were compressed for phones (text, links and bookmarks
+  unchanged). Compress new booklets before uploading when they are above ~8 MB.
+
 ## Local preview
 
 From this directory:
