@@ -396,6 +396,21 @@ a.material-row .material-status{display:inline-flex;align-items:center;justify-c
 a.material-row:hover .material-status,a.material-row:focus-visible .material-status{background:var(--ink)}
 .material-row>.material-status:last-child{justify-self:end}
 
+/* Smaller supplementary library below the main session materials. */
+.academic-contribution{margin-top:38px;padding-top:26px;border-top:1px solid var(--line)}
+.academic-contribution .kicker{margin:0 0 10px}
+.academic-contribution h3{margin:0 0 20px;font-size:clamp(20px,2.2vw,28px);line-height:1.3;letter-spacing:-.02em}
+.academic-contribution h3 span{display:inline-block;font-size:.8em;font-weight:400;color:var(--muted)}
+.academic-resource-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.academic-resource{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:14px;padding:18px;background:var(--paper);border:1px solid var(--line);color:var(--ink);text-decoration:none;transition:background .18s ease}
+.academic-resource:hover,.academic-resource:focus-visible{background:rgba(44,29,24,.06)}
+.academic-resource-type{font-size:10px;font-weight:800;letter-spacing:.08em;color:var(--rust)}
+.academic-resource strong{display:block;font-size:14px;line-height:1.4}
+.academic-resource small{display:block;margin-top:5px;font-size:11px;color:var(--muted)}
+.academic-resource-action{font-size:11px;font-weight:800;white-space:nowrap;color:var(--rust);text-decoration:underline;text-underline-offset:3px}
+@media(max-width:980px){.academic-resource-list{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:640px){.academic-resource{grid-template-columns:auto minmax(0,1fr);gap:10px;padding:16px}.academic-resource-action{grid-column:2}}
+
 .practical-grid article.is-link{cursor:pointer}
 .practical-grid article.is-link h3 button{all:unset;cursor:pointer;font:inherit}
 .practical-grid article.is-link h3 button::after{content:"";position:absolute;inset:0}
