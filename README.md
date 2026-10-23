@@ -9,13 +9,14 @@ The site uses only HTML, CSS and JavaScript. It has no build step and is ready f
 The site is split into a **showcase** part (English + Italian) and an **Event's Hub** (English only, for delegates and staff during the session).
 
 ```
-index.html                 Home — hero, countdown and session essentials
+index.html                 Home — hero, press announcement, event opening and session essentials
 rsverona.html              About RS Verona — vision, team and partners
+press.html                 Press coverage — articles about the session
 topics.html                Committee topics
 me-in-eyp.html             How to stay involved after the session
 contacts.html              Contacts, preparation, safeguarding and FAQ
 hub.html                   Event's Hub — schedule, venues, materials and contacts
-it/                        Italian versions of the five showcase pages (same filenames)
+it/                        Italian versions of the six showcase pages (same filenames)
 ```
 
 
@@ -28,7 +29,7 @@ session and is kept English-only.
 - Showcase pages (IT): edit the matching file in `it/` — same filename, same section IDs.
 - Event's Hub: edit `hub.html` only.
 - Colours and layout: `assets/styles.css`. The photo backgrounds (parallax on desktop, static on phones) are declared once as `--photo-*` variables at the top of the "Visual upgrade" block.
-- Interactive schedule/countdown: `assets/script.js`
+- Interactive schedule, tabs and menus: `assets/script.js`
 - Logo and images: `assets/images/`
 - Future PDF booklets: `documents/`
 
@@ -48,7 +49,9 @@ site to work both at `username.github.io` and at `username.github.io/repository-
 
 ### Partners
 
-The Partners section in `rsverona.html` and `it/rsverona.html` has three groups: patronages, supporters and food partners. Update both languages when partnerships change; use the session mailbox for partnership enquiries. Cards without a logo (European Parliament, Municipality of Verona and most food partners) simply show their name: to add a logo, drop the image in `assets/images/partners/` and add an `<img>` at the start of the card, as the other cards do.
+The Partners section in `rsverona.html` and `it/rsverona.html` separates main sponsors, technical/food/material sponsors, cultural/social partners, institutional patronages and other existing supporters. Update both languages together and preserve each partner's dialog ID. `#partners` is linked from the About page navigation and from the home page.
+
+Logos live in `assets/images/partners/`; official download sources and the current verification status are recorded in `PARTNERS_REPORT.md`. Logos retain their aspect ratio with `object-fit: contain`. If an official logo is unavailable, show the organisation's name without a placeholder. Do not add unverified organisations to the confirmed groups. The European Parliament's previously published name is retained in a separate pending-verification note until event-specific official confirmation is available.
 
 ### Event's Hub details
 

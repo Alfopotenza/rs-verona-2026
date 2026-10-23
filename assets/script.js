@@ -1,34 +1,4 @@
 const schedule = document.querySelector("[data-schedule]");
-const countdown = document.querySelector("[data-countdown]");
-
-if (countdown) {
-  const target = new Date(countdown.dataset.target).getTime();
-  const fields = {
-    days: countdown.querySelector("[data-countdown-days]"),
-    hours: countdown.querySelector("[data-countdown-hours]"),
-    minutes: countdown.querySelector("[data-countdown-minutes]"),
-    seconds: countdown.querySelector("[data-countdown-seconds]"),
-  };
-  const message = countdown.querySelector("[data-countdown-message]");
-  const italian = document.documentElement.lang === "it";
-  const end = Date.parse("2026-10-26T00:00:00+01:00");
-
-  const updateCountdown = () => {
-    const distance = Math.max(0, target - Date.now());
-    fields.days.textContent = String(Math.floor(distance / 86_400_000)).padStart(2, "0");
-    fields.hours.textContent = String(Math.floor((distance % 86_400_000) / 3_600_000)).padStart(2, "0");
-    fields.minutes.textContent = String(Math.floor((distance % 3_600_000) / 60_000)).padStart(2, "0");
-    fields.seconds.textContent = String(Math.floor((distance % 60_000) / 1_000)).padStart(2, "0");
-    if (Date.now() >= end) {
-      message.textContent = italian ? "Grazie per aver vissuto RS Verona 2026" : "Thank you for being part of RS Verona 2026";
-    } else if (distance === 0) {
-      message.textContent = italian ? "RS Verona 2026 è in corso" : "RS Verona 2026 is happening now";
-    }
-  };
-
-  updateCountdown();
-  window.setInterval(updateCountdown, 1000);
-}
 
 const initTabs = (container, defaultIndex = 0) => {
   if (!container) return;
