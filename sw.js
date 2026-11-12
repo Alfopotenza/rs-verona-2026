@@ -3,20 +3,19 @@
 // there is a connection; the saved copy is used when offline or the network is
 // too slow. Images: saved copy first, refreshed in the background.
 // Bump CACHE_VERSION when the PRECACHE list changes.
-const CACHE_VERSION = "rsv-2026-v2";
+const CACHE_VERSION = "rsv-2026-recap-v3";
 const PRECACHE = [
   "./",
   "index.html",
-  "hub.html",
   "rsverona.html",
   "press.html",
-  "topics.html",
+  "booklet.html",
   "me-in-eyp.html",
   "contacts.html",
   "it/index.html",
   "it/rsverona.html",
   "it/press.html",
-  "it/topics.html",
+  "it/booklet.html",
   "it/me-in-eyp.html",
   "it/contacts.html",
   "offline.html",

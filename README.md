@@ -1,129 +1,39 @@
-# RS Verona 2026 — static website
+# RS Verona 2026 — post-event recap
 
-Website for RS Verona 2026, a Regional Session of the European Youth Parliament.
+Bilingual static archive of the European Youth Parliament Regional Session held in Verona on 22–25 October 2026. Plain HTML, CSS and JavaScript; no build step.
 
-The site uses only HTML, CSS and JavaScript. It has no build step and is ready for GitHub Pages.
+## Pages
 
-## Site structure
+- `index.html`: recap, featured press coverage and Resolution Booklet.
+- `press.html`: the four published press articles.
+- `booklet.html`: Resolution Booklet, download and links to the eight committees.
+- `me-in-eyp.html`: how to continue in EYP, roles, quiz and applications.
+- `rsverona.html`: session vision, officials, partners and figures.
+- `contacts.html`: session mailbox, EYP Italy HR, website and Instagram.
+- `it/`: matching Italian pages with the same filenames.
 
-The site is split into a **showcase** part (English + Italian) and an **Event's Hub** (English only, for delegates and staff during the session).
+The operational Hub, topic page and travel/preparation information have been retired. `hub.html`, `topics.html` and `it/topics.html` contain only redirects, preserving existing bookmarks and printed QR codes. Welcome booklets, preparatory documents and calendar downloads have been removed; prior versions remain in Git history.
 
-```
-index.html                 Home — hero, press announcement, event opening and session essentials
-rsverona.html              About RS Verona — vision, team and partners
-press.html                 Press coverage — articles about the session
-topics.html                Committee topics
-me-in-eyp.html             How to stay involved after the session
-contacts.html              Contacts, preparation, safeguarding and FAQ
-hub.html                   Event's Hub — schedule, venues, materials and contacts
-it/                        Italian versions of the six showcase pages (same filenames)
-```
+## Editing
 
+Edit both languages together. The navigation and footer are repeated in each HTML file. Keep relative links (`./` at the root, `../` for shared assets from `it/`) so GitHub Pages project paths work correctly.
 
-`hub.html` has no Italian version by design — it's the operational page used during the
-session and is kept English-only.
+- Styles: `assets/styles.css`.
+- Menus, dialogs, team tabs and quiz: `assets/script.js`.
+- Booklet: `documents/resolution-booklet-verona-2026.pdf` (30 pages, English).
+- Booklet cover: `assets/images/resolution-booklet-cover.jpg`, rendered from the PDF.
+- The booklet index uses physical PDF page numbers, including the cover and contents: REGI 7, CRIM 10, AGRI 14, ITRE 17, LIBE 20, JURI 23, SEDE 25, CULT 28. Update links and metadata if the PDF changes.
+- Press: preserve source titles and URLs in `press.html` and `it/press.html`; update the home page excerpts together.
+- Partners: keep names, logos, dialog IDs and groups aligned between languages. Source notes live in `PARTNERS_REPORT.md`; do not add unverified supporters as confirmed partners.
 
-### Adding/editing content
+The installed web app now opens on the recap. `sw.js` precaches the twelve main pages and essential assets. The booklet is fetched on demand and a full successful PDF response can be cached for later offline use; it is not downloaded automatically. Bump `CACHE_VERSION` when changing the precache list. Old caches are removed on activation.
 
-- Showcase pages (EN): edit the file directly in the repository root.
-- Showcase pages (IT): edit the matching file in `it/` — same filename, same section IDs.
-- Event's Hub: edit `hub.html` only.
-- Colours and layout: `assets/styles.css`. The photo backgrounds (parallax on desktop, static on phones) are declared once as `--photo-*` variables at the top of the "Visual upgrade" block.
-- Interactive schedule, tabs and menus: `assets/script.js`
-- Logo and images: `assets/images/`
-- Future PDF booklets: `documents/`
-
-Every page in `it/` links back to its English counterpart (and vice versa) through the
-`EN`/`IT` switch in the header — keep that link updated if you rename a file.
-
-When a booklet is ready, add the PDF to `documents/` and replace the corresponding material row in `hub.html` with a link. Always use relative links, for example:
-
-```html
-<a class="material-row" href="./documents/welcome-booklet.pdf">
-  <!-- row content -->
-</a>
-```
-
-Relative paths beginning with `./` (or `../` inside `it/`) are intentional: they allow the
-site to work both at `username.github.io` and at `username.github.io/repository-name/`.
-
-### Partners
-
-The Partners section in `rsverona.html` and `it/rsverona.html` separates main sponsors, technical/food/material sponsors, cultural/social partners, institutional patronages and other existing supporters. Update both languages together and preserve each partner's dialog ID. `#partners` is linked from the About page navigation and from the home page.
-
-Logos live in `assets/images/partners/`; official download sources and the current verification status are recorded in `PARTNERS_REPORT.md`. Logos retain their aspect ratio with `object-fit: contain`. If an official logo is unavailable, show the organisation's name without a placeholder. Do not add unverified organisations to the confirmed groups. The European Parliament's previously published name is retained in a separate pending-verification note until event-specific official confirmation is available.
-
-### Event's Hub details
-
-- **Schedule**: each day is a `.schedule-panel` in `hub.html`, with its timeline and a "host school / hotels" block underneath. Only the selected day is shown; the page opens on today's date during the session.
-- **Menu**: the Lunch & dinner card opens the `#modal-menu` dialog (menu provided by Arya SRL).
-- **Venues**: addresses are listed in the "Addresses & transfers" and "Stay information" cards.
-- **Members' Platform**: the "Apply to another session" card in `me-in-eyp.html` opens a dialog (`#modal-apply`) that sends people to the sign-in or sign-up page.
-
-### "Which team are you?" quiz
-
-The quiz in `me-in-eyp.html` and `it/me-in-eyp.html` (section `#quiz`) is driven by
-`assets/script.js`, but all its text lives in the HTML:
-
-- each statement is an `<li>` in `.quiz-items`, with `data-w` saying which team it
-  points to and how strongly (`a` Academic, `m` Media, `o` Organising; negative
-  values point away), e.g. `data-w="m:1,a:-0.5"`;
-- each result is a `.quiz-profile` block (`academic`, `media`, `organising`,
-  `balanced` when no team reaches 40%).
-
-Edit both languages together and keep the statements in the same order.
-
-### Sharing, home-screen icon and QR codes
-
-- The site address is written in the `og:*` tags of every page (link previews on
-  WhatsApp, Instagram, Telegram…) and in the QR codes. It is currently
-  `https://alfopotenza.github.io/rs-verona-2026/`: if it changes, update the
-  `og:url` / `og:image` tags and regenerate the QR codes.
-- The site is a web app: `manifest.webmanifest` + `assets/images/icons/` let people
-  install it on their phone (it opens on the Event's Hub), and `sw.js` keeps it
-  working offline. Pages, CSS, JS and PDFs are always taken from the network when
-  there is a connection, so updates show up immediately; the saved copy is used
-  offline. The Hub shows an "Install" bar (instructions on iPhone). If you add a
-  page or an asset that must work offline from the first visit, add it to
-  `PRECACHE` in `sw.js` and bump `CACHE_VERSION`. The service worker only runs over
-  https or on `localhost` (see "Local preview"), not when opening files directly.
-- `assets/qr/qr-hub.*` (Event's Hub) and `assets/qr/qr-home.*` (home page) are
-  ready to print: use the SVG for print, the PNG for slides and social media.
-
-### Images and PDFs on phones
-
-- Photo backgrounds have lighter copies in `assets/images/m/` used up to 980px
-  wide. If you replace a background photo, replace its mobile copy too.
-- The PDFs in `documents/` were compressed for phones (text, links and bookmarks
-  unchanged). Compress new booklets before uploading when they are above ~8 MB.
-
-## Local preview
-
-From this directory:
+## Preview and publication
 
 ```bash
 python3 -m http.server 8000
 ```
 
-Then open `http://localhost:8000`.
+Open `http://localhost:8000` (English) or `http://localhost:8000/it/` (Italian).
 
-## Publish with GitHub Pages
-
-Create an empty GitHub repository, then run:
-
-```bash
-git init
-git add .
-git commit -m "Initial RS Verona 2026 website"
-git branch -M main
-git remote add origin https://github.com/YOUR-USERNAME/rs-verona-2026.git
-git push -u origin main
-```
-
-On GitHub open **Settings → Pages** and choose **GitHub Actions** under “Build and deployment”. The included workflow publishes the site after every push to `main`.
-
-If you prefer not to use the included workflow, choose **Deploy from a branch**, select `main` and the `/ (root)` folder.
-
-## Team photos
-
-Official profiles with available photos use images in `assets/images/officials/`. Profiles without photos display an initial. Add new photos to that directory and update both `rsverona.html` and `it/rsverona.html`.
+The existing GitHub Actions workflow publishes the repository to GitHub Pages on pushes to `main`. Preview metadata uses `https://alfopotenza.github.io/rs-verona-2026/`; update `og:url` and `og:image` if the hosting address changes.

@@ -1,5 +1,3 @@
-const schedule = document.querySelector("[data-schedule]");
-
 const initTabs = (container, defaultIndex = 0) => {
   if (!container) return;
   const tabs = [...container.querySelectorAll("[data-tab]")];
@@ -38,14 +36,6 @@ const initTabs = (container, defaultIndex = 0) => {
   select(defaultIndex);
 };
 
-// Interpret the event day in Verona, including visitors in other time zones.
-const veronaDate = new Intl.DateTimeFormat("en-CA", {
-  timeZone: "Europe/Rome", year: "numeric", month: "2-digit", day: "2-digit",
-}).format(new Date());
-const eventDays = ["2026-10-22", "2026-10-23", "2026-10-24", "2026-10-25"];
-const currentDay = eventDays.indexOf(veronaDate);
-initTabs(schedule, currentDay >= 0 ? currentDay : veronaDate > eventDays[3] ? 3 : 1);
-initTabs(document.querySelector("[data-audience]"), 0);
 initTabs(document.querySelector("[data-roles]"), 0);
 
 document.querySelectorAll("[data-modal-open]").forEach((trigger) => {
@@ -290,7 +280,7 @@ document.querySelectorAll("[data-quiz]").forEach((quiz) => {
   });
 });
 
-// Web app: offline support, install prompt and offline notice.
+// Web app: offline support and connection notice.
 const siteRoot = new URL(document.querySelector('script[src$="assets/script.js"]').getAttribute("src").replace(/assets\/script\.js$/, ""), location.href);
 
 if ("serviceWorker" in navigator && window.isSecureContext && location.protocol !== "file:") {
@@ -309,52 +299,3 @@ offlinePill.textContent = document.documentElement.lang === "it"
 document.body.append(offlinePill);
 window.addEventListener("online", () => { offlinePill.hidden = true; });
 window.addEventListener("offline", () => { offlinePill.hidden = false; });
-
-const installBar = document.querySelector("[data-install]");
-if (installBar) {
-  const standalone = window.matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
-  const dismissed = localStorage.getItem("rsv-install-dismissed") === "1";
-  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent)
-    || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
-  const button = installBar.querySelector("[data-install-button]");
-  let deferredPrompt = null;
-
-  if (!standalone && !dismissed) {
-    if (isIOS) {
-      installBar.querySelector("[data-install-ios]").hidden = false;
-      installBar.hidden = false;
-    } else if (window.matchMedia("(pointer: coarse)").matches) {
-      // Phones without an install prompt (e.g. Firefox): explain the menu option.
-      // Replaced by the Install button as soon as the browser offers it.
-      setTimeout(() => {
-        if (deferredPrompt) return;
-        installBar.querySelector("[data-install-other]").hidden = false;
-        installBar.hidden = false;
-      }, 3000);
-    }
-  }
-
-  window.addEventListener("beforeinstallprompt", (event) => {
-    event.preventDefault();
-    deferredPrompt = event;
-    if (standalone || dismissed) return;
-    installBar.querySelector("[data-install-other]").hidden = true;
-    button.hidden = false;
-    installBar.hidden = false;
-  });
-
-  button.addEventListener("click", async () => {
-    if (!deferredPrompt) return;
-    deferredPrompt.prompt();
-    await deferredPrompt.userChoice.catch(() => null);
-    deferredPrompt = null;
-    button.hidden = true;
-  });
-
-  installBar.querySelector("[data-install-close]").addEventListener("click", () => {
-    installBar.hidden = true;
-    localStorage.setItem("rsv-install-dismissed", "1");
-  });
-
-  window.addEventListener("appinstalled", () => { installBar.hidden = true; });
-}

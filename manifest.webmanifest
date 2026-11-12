@@ -2,8 +2,8 @@
   "id": "./",
   "name": "RS Verona 2026",
   "short_name": "RS Verona",
-  "description": "Schedule, venues, menus and materials for RS Verona 2026, a Regional Session of the European Youth Parliament.",
-  "start_url": "./hub.html",
+  "description": "RS Verona 2026: session recap, press coverage, Resolution Booklet and your next steps in EYP.",
+  "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "background_color": "#fffaf0",
@@ -33,48 +33,20 @@
   ],
   "shortcuts": [
     {
-      "name": "Schedule",
-      "url": "./hub.html#schedule",
-      "icons": [
-        {
-          "src": "assets/images/icons/icon-192.png",
-          "sizes": "192x192",
-          "type": "image/png"
-        }
-      ]
+      "name": "In the press",
+      "url": "./press.html"
     },
     {
-      "name": "Materials",
-      "url": "./hub.html#materials",
-      "icons": [
-        {
-          "src": "assets/images/icons/icon-192.png",
-          "sizes": "192x192",
-          "type": "image/png"
-        }
-      ]
+      "name": "Resolution Booklet",
+      "url": "./booklet.html"
     },
     {
-      "name": "Menu & venues",
-      "url": "./hub.html#practical",
-      "icons": [
-        {
-          "src": "assets/images/icons/icon-192.png",
-          "sizes": "192x192",
-          "type": "image/png"
-        }
-      ]
+      "name": "Me in EYP",
+      "url": "./me-in-eyp.html"
     },
     {
-      "name": "Which team are you?",
-      "url": "./me-in-eyp.html#quiz",
-      "icons": [
-        {
-          "src": "assets/images/icons/icon-192.png",
-          "sizes": "192x192",
-          "type": "image/png"
-        }
-      ]
+      "name": "Contacts",
+      "url": "./contacts.html"
     }
   ]
 }

@@ -29,7 +29,7 @@
   <script src="../assets/script.js" defer></script>
 </head>
 <body>
-<main>
+<main id="top">
   <header class="site-header">
     <div class="brand-group">
       <img class="eyp-mark" src="../assets/images/EYP_ITALY_SHORT.svg" alt="EYP Italy" height="38">
@@ -40,22 +40,17 @@
       </a>
     </div>
     <button class="menu-toggle" type="button" aria-controls="mobile-navigation" aria-expanded="false" aria-label="Apri il menu"><span></span><span></span><span></span></button>
-    <nav class="main-nav" id="mobile-navigation" aria-label="Navigazione principale">
-      <a href="./index.html">Home</a><a href="./rsverona.html">RS Verona</a><a href="./topics.html">Topic</a><a class="active" href="./me-in-eyp.html">Io nell'EYP</a><a href="./contacts.html">Contatti</a>
-      <a class="nav-extra nav-extra-hub" href="../hub.html">Event's Hub →</a><a class="nav-extra" href="https://eypitaly.org" target="_blank" rel="noreferrer">← Ritorna su EYP Italy</a>
-    </nav>
+    <nav class="main-nav" id="mobile-navigation" aria-label="Navigazione principale"><a href="./index.html">Recap</a><a href="./press.html">Rassegna stampa</a><a href="./booklet.html">Booklet</a><a class="active" aria-current="page" href="./me-in-eyp.html">Me in EYP</a><a href="./rsverona.html">RS Verona</a><a href="./contacts.html">Contatti</a></nav>
     <div class="header-actions">
       <div class="lang-switch" aria-label="Lingua">
         <a class="flag" href="../me-in-eyp.html" hreflang="en" lang="en" title="English"><svg viewBox="0 0 640 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path fill="#012169" d="M0 0h640v480H0z"/><path fill="#FFF" d="M75 0l244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-179L0 62V0z"/><path fill="#C8102E" d="M424 281l216 159v40L369 281h55zm-184 20l6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"/><path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z"/><path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"/></svg></a>
         <span class="flag active" title="Italiano"><svg viewBox="0 0 3 2" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1" height="2" fill="#008C45"/><rect x="1" width="1" height="2" fill="#F4F5F0"/><rect x="2" width="1" height="2" fill="#CD212A"/></svg></span>
       </div>
-      <a class="header-link stacked" href="../hub.html"><span>Event's Hub →</span><small>Per i partecipanti</small></a>
-      <a class="header-link stacked" href="https://eypitaly.org" target="_blank" rel="noreferrer"><span>← Ritorna su EYP Italy</span><small>eypitaly.org</small></a>
     </div>
   </header>
 
   <section class="about-section" id="continue">
-    <div><p class="kicker light">Continua il tuo percorso nell'EYP</p><h1>C'è sempre una prossima sessione.</h1><p>RS Verona 2026 dura quattro giorni — il tuo percorso nello European Youth Parliament può continuare per anni. EYP Italy organizza eventi regionali, nazionali e internazionali durante tutto l'anno, e puoi continuare a partecipare come delegato o fare il passo in più diventando un official.</p><div class="hero-actions"><a class="button on-dark" href="https://eypitaly.org" target="_blank" rel="noreferrer">Visita EYP Italy ↗</a><a class="button on-dark" href="#quiz">Fai il quiz ↓</a></div></div>
+    <div><p class="kicker light">Continua il tuo percorso nell'EYP</p><h1>C'è sempre una prossima sessione.</h1><p>RS Verona 2026 ci ha riuniti per quattro giorni — il tuo percorso nello European Youth Parliament può continuare per anni. EYP Italy organizza eventi regionali, nazionali e internazionali durante tutto l'anno, e puoi continuare a partecipare come delegato o fare il passo in più diventando un official.</p><div class="hero-actions"><a class="button on-dark" href="https://eypitaly.org" target="_blank" rel="noreferrer">Visita EYP Italy ↗</a><a class="button on-dark" href="#quiz">Fai il quiz ↓</a></div></div>
     <aside><strong data-counter="90">0%</strong><p>dei partecipanti ha dichiarato di voler partecipare a un altro evento EYP.</p><small>Feedback evento · 2024</small></aside>
   </section>
 
@@ -203,7 +198,7 @@
       <details class="faq-accordion-item">
         <summary><span>Come posso diventare un official?</span><svg class="faq-arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7l5 6 5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
         <div class="faq-answer">
-          <p>Per diventare un official, devi registrarti sulla Members' Platform. Dopo la sessione, riceverai un'email con tutte le informazioni, e il tuo NC riconoscerà il tuo account (in alternativa, per i delegati italiani, invia un'email a <a href="mailto:hr@eypitaly.org">hr@eypitaly.org</a> per richiederlo).</p>
+          <p>Per diventare un official, devi registrarti sulla Members' Platform. Il tuo Comitato Nazionale deve riconoscere il tuo account. Se sei un delegato italiano, invia un’email a <a href="mailto:hr@eypitaly.org">hr@eypitaly.org</a> per richiedere il riconoscimento.</p>
           <p>Nella Members' Platform trovi tutti gli eventi organizzati in tutto il network, e puoi candidarti per tutte le posizioni disponibili!</p>
         </div>
       </details>
@@ -277,9 +272,7 @@
     <div class="footer-brand"><img class="eyp-mark" src="../assets/images/EYP_ITALY_SHORT.svg" alt="EYP Italy" height="32"><span class="brand-divider" aria-hidden="true"></span><img src="../assets/images/rs-verona.svg" alt="" width="48" height="48"><strong>RS Verona 2026</strong></div>
     <p>“Crafting Unity: Weaving Local Traditions into Europe’s Future.”</p>
     <div class="footer-links"><a href="https://eypitaly.org" target="_blank" rel="noreferrer">EYP Italy</a><a href="https://www.instagram.com/eypitaly/" target="_blank" rel="noreferrer">Instagram</a><a href="#top">Torna su ↑</a></div>
-    <nav class="footer-sitemap" aria-label="Mappa del sito">
-      <a href="./index.html">Home</a><a href="./rsverona.html">RS Verona</a><a href="./topics.html">Topic</a><a href="./me-in-eyp.html">Io nell'EYP</a><a href="./contacts.html">Contatti</a><a href="../hub.html">Event's Hub</a>
-    </nav>
+    <nav class="footer-sitemap" aria-label="Mappa del sito"><a href="./index.html">Recap</a><a href="./press.html">Rassegna stampa</a><a href="./booklet.html">Booklet</a><a class="active" aria-current="page" href="./me-in-eyp.html">Me in EYP</a><a href="./rsverona.html">RS Verona</a><a href="./contacts.html">Contatti</a></nav>
     <small>© 2026 Parlamento Europeo Giovani — APS</small>
   </footer>
 </main>
